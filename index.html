@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YacSoft — Bulmacayı ödüle çeviren bir stüdyo</title>
+<meta name="description" content="YacSoft, mobil bulmaca oyunları geliştiren bir stüdyodur. İlk oyunumuz Sudoku Ödül Festivali'ni Google Play'den indirin.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%233E1F73'/%3E%3Cg stroke='white' stroke-width='6' stroke-linecap='round' fill='none'%3E%3Crect x='24' y='24' width='52' height='52' rx='6'/%3E%3Cline x1='41' y1='24' x2='41' y2='76'/%3E%3Cline x1='59' y1='24' x2='59' y2='76'/%3E%3Cline x1='24' y1='41' x2='76' y2='41'/%3E%3Cline x1='24' y1='59' x2='76' y2='59'/%3E%3C/g%3E%3C/svg%3E">
+<style>
+  :root {
+    --paper: #FBF7EE;
+    --paper-raised: #FFFFFF;
+    --ink: #1E1730;
+    --ink-soft: #5B5270;
+    --accent: #3E1F73;
+    --accent-strong: #2A1554;
+    --gold: #D89A2A;
+    --line: rgba(42,21,84,0.16);
+    --line-strong: rgba(42,21,84,0.34);
+    --shadow: rgba(42,21,84,0.14);
+    --brand-chip: #3E1F73;
+    --focus-ring: #3E1F73;
+
+    --font-display: ui-monospace, "Cascadia Code", "Segoe UI Mono", "Roboto Mono", Consolas, "SF Mono", monospace;
+    --font-body: "Segoe UI", ui-sans-serif, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #17112B;
+      --paper-raised: #201938;
+      --ink: #EFE9FA;
+      --ink-soft: #B3A6D6;
+      --accent: #B49CE0;
+      --accent-strong: #D6C8F2;
+      --gold: #F0B94A;
+      --line: rgba(255,255,255,0.14);
+      --line-strong: rgba(255,255,255,0.26);
+      --shadow: rgba(0,0,0,0.5);
+      --focus-ring: #D6C8F2;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --paper: #17112B;
+    --paper-raised: #201938;
+    --ink: #EFE9FA;
+    --ink-soft: #B3A6D6;
+    --accent: #B49CE0;
+    --accent-strong: #D6C8F2;
+    --gold: #F0B94A;
+    --line: rgba(255,255,255,0.14);
+    --line-strong: rgba(255,255,255,0.26);
+    --shadow: rgba(0,0,0,0.5);
+    --focus-ring: #D6C8F2;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { color-scheme: light dark; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: inherit; }
+
+  .wrap {
+    max-width: 980px;
+    margin: 0 auto;
+    padding-left: clamp(20px, 5vw, 40px);
+    padding-right: clamp(20px, 5vw, 40px);
+  }
+
+  .eyebrow {
+    font-family: var(--font-display);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 0.9rem;
+  }
+
+  h1, h2, h3 {
+    text-wrap: balance;
+    margin: 0;
+  }
+
+  /* ---------- Header ---------- */
+
+  .site-header {
+    border-bottom: 1px solid var(--line);
+  }
+
+  .header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 22px 0;
+  }
+
+  .wordmark {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.15rem;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+  }
+
+  .wordmark::before {
+    content: "";
+    width: 0.85em;
+    height: 0.85em;
+    background: var(--brand-chip);
+    border-radius: 3px;
+    display: inline-block;
+  }
+
+  .site-nav {
+    display: flex;
+    gap: clamp(16px, 4vw, 32px);
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+  }
+
+  .site-nav a {
+    text-decoration: none;
+    color: var(--ink-soft);
+    border-bottom: 1px solid transparent;
+    padding-bottom: 2px;
+    transition: color 0.15s ease, border-color 0.15s ease;
+  }
+
+  .site-nav a:hover { color: var(--accent); border-color: var(--accent); }
+
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  /* ---------- Hero ---------- */
+
+  .hero {
+    position: relative;
+    overflow: hidden;
+    padding: clamp(56px, 9vw, 108px) 0 clamp(48px, 7vw, 84px);
+  }
+
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: -20% -10%;
+    background-image:
+      repeating-linear-gradient(0deg, var(--line) 0 1px, transparent 1px 96px),
+      repeating-linear-gradient(90deg, var(--line) 0 1px, transparent 1px 96px);
+    opacity: 0.5;
+    mask-image: radial-gradient(ellipse at 70% 30%, #000 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: clamp(28px, 6vw, 64px);
+    align-items: center;
+  }
+
+  .hero-title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(2.3rem, 5.4vw, 3.6rem);
+    line-height: 1.06;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+  }
+
+  .hero-sub {
+    max-width: 46ch;
+    color: var(--ink-soft);
+    font-size: 1.05rem;
+    margin: 1.3rem 0 0;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 2rem;
+  }
+
+  .btn {
+    font-family: var(--font-display);
+    font-size: 0.88rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    text-decoration: none;
+    padding: 13px 22px;
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+    border: 1px solid transparent;
+    transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+  }
+
+  .btn-primary {
+    background: var(--brand-chip);
+    color: #FFFFFF;
+  }
+
+  .btn-primary:hover { transform: translateY(-1px); }
+
+  .btn-ghost {
+    border-color: var(--line-strong);
+    color: var(--ink);
+  }
+
+  .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+  .btn-block { width: 100%; justify-content: center; margin-top: 1.4rem; }
+
+  .hero-mark {
+    display: flex;
+    justify-content: center;
+  }
+
+  .mark-chip {
+    width: min(280px, 78vw);
+    aspect-ratio: 1;
+    background: var(--brand-chip);
+    border-radius: 30px;
+    box-shadow: 0 24px 48px -20px var(--shadow);
+    padding: 12%;
+  }
+
+  .mark-chip svg { width: 100%; height: 100%; display: block; }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .mark-digit {
+      opacity: 0;
+      transform: scale(0.4);
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: mark-fill 0.42s cubic-bezier(.2,.8,.2,1) forwards;
+    }
+    .mark-digit:nth-of-type(1) { animation-delay: 0.35s; }
+    .mark-digit:nth-of-type(2) { animation-delay: 0.55s; }
+    .mark-digit:nth-of-type(3) { animation-delay: 0.75s; }
+    .mark-digit:nth-of-type(4) { animation-delay: 0.95s; }
+  }
+
+  @keyframes mark-fill {
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  @media (max-width: 720px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .hero-mark { order: -1; }
+    .mark-chip { width: min(220px, 60vw); margin: 0 auto; }
+  }
+
+  /* ---------- Apps / catalog ---------- */
+
+  .apps { padding: clamp(48px, 8vw, 84px) 0 clamp(64px, 9vw, 100px); }
+
+  .section-title {
+    font-size: clamp(1.4rem, 2.6vw, 1.9rem);
+    font-weight: 600;
+    max-width: 34ch;
+    margin-top: 0.4rem;
+  }
+
+  .board-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 0;
+    margin-top: 2.8rem;
+    border: 2px solid var(--line-strong);
+    border-radius: 18px;
+    overflow: hidden;
+    background: var(--line);
+  }
+
+  .tile {
+    background: var(--paper-raised);
+    padding: 28px 26px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid var(--line);
+  }
+
+  .board-row .tile:last-child { border-right: none; }
+
+  @media (max-width: 720px) {
+    .tile { border-right: none; border-bottom: 1px solid var(--line); }
+    .board-row .tile:last-child { border-bottom: none; }
+  }
+
+  .tile-icon {
+    width: 44px;
+    height: 44px;
+    background: var(--brand-chip);
+    border-radius: 10px;
+    padding: 7px;
+    margin-bottom: 1.1rem;
+  }
+
+  .tile-icon svg { width: 100%; height: 100%; display: block; }
+
+  .tile h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+  }
+
+  .tile-filled p {
+    color: var(--ink-soft);
+    font-size: 0.94rem;
+    margin: 0.7rem 0 0;
+  }
+
+  .tags {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 0;
+    margin: 1.2rem 0 0;
+  }
+
+  .tags li {
+    font-family: var(--font-display);
+    font-size: 0.72rem;
+    letter-spacing: 0.02em;
+    color: var(--accent);
+    border: 1px solid var(--line-strong);
+    border-radius: 999px;
+    padding: 5px 11px;
+  }
+
+  .tile-empty {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background:
+      repeating-linear-gradient(135deg, var(--line) 0 2px, transparent 2px 14px);
+    color: var(--ink-soft);
+  }
+
+  .tile-ghost {
+    font-family: var(--font-display);
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--ink-soft);
+    opacity: 0.4;
+    width: 52px;
+    height: 52px;
+    border: 1px dashed var(--line-strong);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  .tile-empty h3 { color: var(--ink-soft); font-weight: 600; font-size: 1rem; }
+  .tile-empty p { font-size: 0.88rem; margin: 0.5rem 0 0; max-width: 22ch; }
+
+  /* ---------- Footer ---------- */
+
+  .site-footer {
+    border-top: 1px solid var(--line);
+    padding: 26px 0 40px;
+  }
+
+  .footer-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 20px;
+    justify-content: space-between;
+    font-family: var(--font-display);
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+  }
+
+  .footer-row a { text-decoration: none; }
+  .footer-row a:hover { color: var(--accent); }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-row">
+    <a class="wordmark" href="#top">YacSoft</a>
+    <nav class="site-nav">
+      <a href="#apps">Uygulamalar</a>
+      <a href="#contact">İletişim</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">YacSoft Stüdyosu</p>
+        <h1 class="hero-title">Bulmacayı ödüle çeviren bir stüdyo.</h1>
+        <p class="hero-sub">Klasik oyun mekaniklerini gerçek zamanlı etkinliklere ve kazanılabilir ödüllere bağlıyoruz. İlk oyunumuz Sudoku Ödül Festivali, şimdi Google Play'de.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.yacsoft.sudokuapp">Google Play'de Aç</a>
+          <a class="btn btn-ghost" href="#apps">Uygulamaları Gör</a>
+        </div>
+      </div>
+      <div class="hero-mark">
+        <div class="mark-chip">
+          <svg viewBox="0 0 456 456" role="img" aria-label="Sudoku Ödül Festivali ızgara işareti">
+            <circle cx="122" cy="88" r="9" fill="#F6B93B" />
+            <circle cx="365" cy="195" r="7" fill="#FFFFFF" opacity="0.85" />
+            <circle cx="86" cy="330" r="8" fill="#F6B93B" opacity="0.9" />
+            <circle cx="345" cy="368" r="10" fill="#FFFFFF" opacity="0.8" />
+            <circle cx="150" cy="365" r="6" fill="#F6B93B" opacity="0.7" />
+            <g stroke="#FFFFFF" stroke-width="11" stroke-linecap="round" fill="none">
+              <rect x="108" y="112" width="240" height="240" rx="18" />
+              <line x1="188" y1="112" x2="188" y2="352" />
+              <line x1="268" y1="112" x2="268" y2="352" />
+              <line x1="108" y1="192" x2="348" y2="192" />
+              <line x1="108" y1="272" x2="348" y2="272" />
+            </g>
+            <g font-family="Arial, Helvetica, sans-serif" font-weight="bold" font-size="46" fill="#FFFFFF" text-anchor="middle">
+              <text class="mark-digit" x="148" y="168">8</text>
+              <text class="mark-digit" x="308" y="248">9</text>
+              <text class="mark-digit" x="148" y="248">5</text>
+              <text class="mark-digit" x="308" y="328">7</text>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="apps" id="apps">
+    <div class="wrap">
+      <p class="eyebrow">Uygulama Kataloğu</p>
+      <h2 class="section-title">Bir hücre dolu, ikisi boş — tıpkı çözülmemiş bir sudoku gibi.</h2>
+
+      <div class="board-row">
+        <article class="tile tile-filled">
+          <div class="tile-icon">
+            <svg viewBox="0 0 456 456" role="img" aria-label="Sudoku Ödül Festivali simgesi">
+              <g stroke="#FFFFFF" stroke-width="20" stroke-linecap="round" fill="none">
+                <rect x="108" y="112" width="240" height="240" rx="18" />
+                <line x1="188" y1="112" x2="188" y2="352" />
+                <line x1="268" y1="112" x2="268" y2="352" />
+                <line x1="108" y1="192" x2="348" y2="192" />
+                <line x1="108" y1="272" x2="348" y2="272" />
+              </g>
+            </svg>
+          </div>
+          <h3>Sudoku Ödül Festivali</h3>
+          <p>Klasik 9x9 sudoku, dört zorluk seviyesi ve etkinlik süresince biriken puanlarla birinciye, ikinciye ve üçüncüye gerçek ödüller.</p>
+          <ul class="tags">
+            <li>4 zorluk seviyesi</li>
+            <li>Etkinlik sıralaması</li>
+            <li>Bulut senkronizasyonu</li>
+          </ul>
+          <a class="btn btn-primary btn-block" href="https://play.google.com/store/apps/details?id=com.yacsoft.sudokuapp">Google Play'de İndir</a>
+        </article>
+
+        <article class="tile tile-empty">
+          <div class="tile-ghost">?</div>
+          <h3>Yakında</h3>
+          <p>Yeni bir bulmaca üzerinde çalışıyoruz.</p>
+        </article>
+
+        <article class="tile tile-empty">
+          <div class="tile-ghost">?</div>
+          <h3>Yakında</h3>
+          <p>Katalog büyümeye devam edecek.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer" id="contact">
+  <div class="wrap footer-row">
+    <span>© 2026 YacSoft</span>
+    <a href="mailto:yacsoft.play@gmail.com">yacsoft.play@gmail.com</a>
+  </div>
+</footer>
+
+</body>
+</html>
