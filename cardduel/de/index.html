@@ -37,12 +37,32 @@
     <p class="sub">Baue Decks, beschwöre Monster und duelliere dich online mit anderen Spielern.</p>
     <span class="badge soon">Bald bei Google Play</span>
   </section>
-  <section class="shots" aria-label="Screenshots">
-    <img src="/cardduel/assets/shots/de-1.jpg" alt="Card Duel: Online-Kartenkampf 1" loading="lazy" width="1280" height="720">
+  <section class="slider" dir="ltr" aria-label="Screenshots">
+    <div class="track">
+    <img src="/cardduel/assets/shots/de-1.jpg" alt="Card Duel: Online-Kartenkampf 1" loading="eager" width="1280" height="720">
     <img src="/cardduel/assets/shots/de-2.jpg" alt="Card Duel: Online-Kartenkampf 2" loading="lazy" width="1280" height="720">
     <img src="/cardduel/assets/shots/de-3.jpg" alt="Card Duel: Online-Kartenkampf 3" loading="lazy" width="1280" height="720">
     <img src="/cardduel/assets/shots/de-4.jpg" alt="Card Duel: Online-Kartenkampf 4" loading="lazy" width="1280" height="720">
+    </div>
+    <button class="nav prev" type="button" aria-label="Previous">&#8249;</button>
+    <button class="nav next" type="button" aria-label="Next">&#8250;</button>
+    <div class="dots"><button type="button" aria-label="1"></button><button type="button" aria-label="2"></button><button type="button" aria-label="3"></button><button type="button" aria-label="4"></button></div>
   </section>
+  <script>(function(){
+var s=document.querySelector('.slider');if(!s)return;
+var t=s.querySelector('.track'),im=t.children,ds=s.querySelectorAll('.dots button'),cur=0,timer;
+function go(i){cur=(i+im.length)%im.length;var e=im[cur];t.scrollTo({left:e.offsetLeft-(t.clientWidth-e.clientWidth)/2,behavior:'smooth'});mark();}
+function mark(){for(var i=0;i<ds.length;i++)ds[i].className=i===cur?'on':'';}
+function near(){var c=t.scrollLeft+t.clientWidth/2,b=0,d=1e9;for(var i=0;i<im.length;i++){var m=Math.abs(im[i].offsetLeft+im[i].clientWidth/2-c);if(m<d){d=m;b=i;}}cur=b;mark();}
+function play(){clearInterval(timer);timer=setInterval(function(){go(cur+1);},4500);}
+t.addEventListener('scroll',function(){clearTimeout(t._w);t._w=setTimeout(near,80);});
+s.querySelector('.prev').onclick=function(){go(cur-1);play();};
+s.querySelector('.next').onclick=function(){go(cur+1);play();};
+for(var i=0;i<ds.length;i++)(function(i){ds[i].onclick=function(){go(i);play();};})(i);
+s.addEventListener('pointerdown',function(){clearInterval(timer);});
+s.addEventListener('pointerup',play);
+mark();play();
+})();</script>
   <p class="lead">Baue dein Deck, beschwöre mächtige Monster und überliste deinen Gegner! Card Duel ist ein strategisches Kartenduell-Spiel für dein Smartphone.</p>
 <div class="cards">
 <section class="card"><h3>So wird gespielt</h3><p>Starte mit 8.000 Lebenspunkten und duelliere dich mit Monstern, Zaubern und Fallen. Beschwöre, greife an, lege Fallen und verkette deine Karten, um das Blatt zu wenden.</p></section>
