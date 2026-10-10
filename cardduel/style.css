@@ -233,3 +233,14 @@ footer p { margin: 0; }
   .hero { padding-top: 36px; }
   .hero-icon { width: 96px; height: 96px; border-radius: 22px; }
 }
+
+/* Sayfalama */
+.pager { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; margin-top: 26px; }
+.pager:empty { display: none; }
+.pg {
+  min-width: 42px; height: 42px; padding: 0 12px; border-radius: 12px; border: 1px solid var(--line); background: var(--panel);
+  color: var(--text); font: inherit; font-size: 15px; cursor: pointer; transition: all 0.2s;
+}
+.pg:hover:not(:disabled) { border-color: rgba(255, 204, 97, 0.5); background: rgba(255, 204, 97, 0.1); }
+.pg.on { color: #1a1204; font-weight: 700; border-color: transparent; background: linear-gradient(180deg, var(--gold), var(--gold2)); }
+.pg:disabled { opacity: 0.35; cursor: default; }
