@@ -28,7 +28,10 @@
 <body>
 <header class="top">
   <a class="brand" href="/cardduel/en/"><img src="/cardduel/assets/icon.png" alt="" width="36" height="36"><span>Card Duel</span></a>
-  <nav><a href="/cardduel/tr/">Türkçe</a><a href="/cardduel/en/" class="on">English</a><a href="/cardduel/de/">Deutsch</a><a href="/cardduel/fr/">Français</a><a href="/cardduel/it/">Italiano</a><a href="/cardduel/pt/">Português</a><a href="/cardduel/es/">Español</a><a href="/cardduel/ru/">Русский</a><a href="/cardduel/ar/">العربية</a><a href="/cardduel/zh/">中文</a><a href="/cardduel/ja/">日本語</a></nav>
+  <details class="lang">
+    <summary aria-label="Language"><img class="flag" src="/cardduel/assets/flags/us.svg" alt="" width="22" height="16"><span>English</span><i class="chev"></i></summary>
+    <ul><li><a href="/cardduel/tr/" hreflang="tr"><img class="flag" src="/cardduel/assets/flags/tr.svg" alt="" width="22" height="16"><span>Türkçe</span></a></li><li><a href="/cardduel/en/" class="on" hreflang="en"><img class="flag" src="/cardduel/assets/flags/us.svg" alt="" width="22" height="16"><span>English</span></a></li><li><a href="/cardduel/de/" hreflang="de"><img class="flag" src="/cardduel/assets/flags/de.svg" alt="" width="22" height="16"><span>Deutsch</span></a></li><li><a href="/cardduel/fr/" hreflang="fr"><img class="flag" src="/cardduel/assets/flags/fr.svg" alt="" width="22" height="16"><span>Français</span></a></li><li><a href="/cardduel/it/" hreflang="it"><img class="flag" src="/cardduel/assets/flags/it.svg" alt="" width="22" height="16"><span>Italiano</span></a></li><li><a href="/cardduel/pt/" hreflang="pt"><img class="flag" src="/cardduel/assets/flags/br.svg" alt="" width="22" height="16"><span>Português</span></a></li><li><a href="/cardduel/es/" hreflang="es"><img class="flag" src="/cardduel/assets/flags/es.svg" alt="" width="22" height="16"><span>Español</span></a></li><li><a href="/cardduel/ru/" hreflang="ru"><img class="flag" src="/cardduel/assets/flags/ru.svg" alt="" width="22" height="16"><span>Русский</span></a></li><li><a href="/cardduel/ar/" hreflang="ar"><img class="flag" src="/cardduel/assets/flags/sa.svg" alt="" width="22" height="16"><span>العربية</span></a></li><li><a href="/cardduel/zh/" hreflang="zh"><img class="flag" src="/cardduel/assets/flags/cn.svg" alt="" width="22" height="16"><span>中文</span></a></li><li><a href="/cardduel/ja/" hreflang="ja"><img class="flag" src="/cardduel/assets/flags/jp.svg" alt="" width="22" height="16"><span>日本語</span></a></li></ul>
+  </details>
 </header>
 <main>
   <section class="hero">
@@ -65,11 +68,11 @@ mark();play();
 })();</script>
   <p class="lead">Build your deck, summon powerful monsters and outsmart your opponent! Card Duel is a strategic card duel game made for your phone.</p>
 <div class="cards">
-<section class="card"><h3>How you play</h3><p>Start with 8,000 life points and duel with monsters, spells and traps. Summon, attack, set traps and chain your cards to turn the tide of battle.</p></section>
-<section class="card"><h3>Game modes</h3><ul><li>Story: fight through 8 chapters against ever tougher opponents</li><li>VS Computer: three difficulty levels, perfect for practice</li><li>Online Duel: ranked matches against real players, climb through the leagues</li><li>Friends: add friends with a friend code and challenge them to a duel</li></ul></section>
-<section class="card"><h3>Collection &amp; decks</h3><ul><li>Over 90 beautifully illustrated cards across three types: monsters, spells and traps</li><li>Open card packs and collect every rarity from Common to Legendary</li><li>Build and save multiple decks and find your best combo</li></ul></section>
-<section class="card"><h3>Rewards</h3><ul><li>Daily login rewards, daily quests and achievements</li><li>A 30-tier season pass</li><li>Weekly and global leaderboards</li></ul></section>
-<section class="card"><h3>Fair &amp; friendly</h3><p>Preset emotes instead of free chat: no toxic behavior. Watch replays of your matches and learn from every duel.</p></section>
+<section class="card"><span class="ico">🎮</span><h3>How you play</h3><p>Start with 8,000 life points and duel with monsters, spells and traps. Summon, attack, set traps and chain your cards to turn the tide of battle.</p></section>
+<section class="card"><span class="ico">⚔️</span><h3>Game modes</h3><ul><li>Story: fight through 8 chapters against ever tougher opponents</li><li>VS Computer: three difficulty levels, perfect for practice</li><li>Online Duel: ranked matches against real players, climb through the leagues</li><li>Friends: add friends with a friend code and challenge them to a duel</li></ul></section>
+<section class="card"><span class="ico">🃏</span><h3>Collection &amp; decks</h3><ul><li>Over 90 beautifully illustrated cards across three types: monsters, spells and traps</li><li>Open card packs and collect every rarity from Common to Legendary</li><li>Build and save multiple decks and find your best combo</li></ul></section>
+<section class="card"><span class="ico">🎁</span><h3>Rewards</h3><ul><li>Daily login rewards, daily quests and achievements</li><li>A 30-tier season pass</li><li>Weekly and global leaderboards</li></ul></section>
+<section class="card"><span class="ico">🛡️</span><h3>Fair &amp; friendly</h3><p>Preset emotes instead of free chat: no toxic behavior. Watch replays of your matches and learn from every duel.</p></section>
 </div>
 <div class="tail"><p>Available in 11 languages. Card Duel is free to play with optional in-app purchases and optional rewarded video ads.</p>
 <p>Download now and prove you are the best duelist!</p>
@@ -83,5 +86,6 @@ mark();play();
   </nav>
   <p>© 2026 YacSoft. All rights reserved.</p>
 </footer>
+<script>document.addEventListener("click",function(e){var d=document.querySelector("details.lang");if(d&&d.open&&!d.contains(e.target))d.open=false;});</script>
 </body>
 </html>
