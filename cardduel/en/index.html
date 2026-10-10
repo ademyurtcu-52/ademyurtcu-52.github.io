@@ -23,7 +23,7 @@
 <meta property="og:image" content="https://ademyurtcu-52.github.io/cardduel/assets/feature.jpg">
 <meta property="og:type" content="website">
 <link rel="icon" href="/cardduel/assets/icon.png">
-<link rel="stylesheet" href="/cardduel/style.css">
+<link rel="stylesheet" href="/cardduel/style.css?v=mv2jsdl7">
 </head>
 <body>
 <header class="top">
@@ -68,15 +68,547 @@ mark();play();
 })();</script>
   <p class="lead">Build your deck, summon powerful monsters and outsmart your opponent! Card Duel is a strategic card duel game made for your phone.</p>
 <div class="cards">
-<section class="card"><span class="ico">🎮</span><h3>How you play</h3><p>Start with 8,000 life points and duel with monsters, spells and traps. Summon, attack, set traps and chain your cards to turn the tide of battle.</p></section>
-<section class="card"><span class="ico">⚔️</span><h3>Game modes</h3><ul><li>Story: fight through 8 chapters against ever tougher opponents</li><li>VS Computer: three difficulty levels, perfect for practice</li><li>Online Duel: ranked matches against real players, climb through the leagues</li><li>Friends: add friends with a friend code and challenge them to a duel</li></ul></section>
-<section class="card"><span class="ico">🃏</span><h3>Collection &amp; decks</h3><ul><li>Over 90 beautifully illustrated cards across three types: monsters, spells and traps</li><li>Open card packs and collect every rarity from Common to Legendary</li><li>Build and save multiple decks and find your best combo</li></ul></section>
-<section class="card"><span class="ico">🎁</span><h3>Rewards</h3><ul><li>Daily login rewards, daily quests and achievements</li><li>A 30-tier season pass</li><li>Weekly and global leaderboards</li></ul></section>
-<section class="card"><span class="ico">🛡️</span><h3>Fair &amp; friendly</h3><p>Preset emotes instead of free chat: no toxic behavior. Watch replays of your matches and learn from every duel.</p></section>
+<section class="card"><span class="ico"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M10 8.5v7l6-3.5z"/></svg></span><h3>How you play</h3><p>Start with 8,000 life points and duel with monsters, spells and traps. Summon, attack, set traps and chain your cards to turn the tide of battle.</p></section>
+<section class="card"><span class="ico"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 17.5 3 6V3h3l11.5 11.5"/><path d="m13 19 6-6"/><path d="m16 16 4 4"/><path d="m19 21 2-2"/><path d="M14.5 6.5 18 3h3v3l-3.5 3.5"/><path d="m5 14 4 4"/><path d="m7 17-3 3"/><path d="m3 19 2 2"/></svg></span><h3>Game modes</h3><ul><li>Story: fight through 8 chapters against ever tougher opponents</li><li>VS Computer: three difficulty levels, perfect for practice</li><li>Online Duel: ranked matches against real players, climb through the leagues</li><li>Friends: add friends with a friend code and challenge them to a duel</li></ul></section>
+<section class="card"><span class="ico"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="3" width="12" height="16" rx="2"/><path d="M4 7v12a2 2 0 0 0 2 2h9"/><path d="m14 8 1.2 2.4 2.6.4-1.9 1.8.5 2.6L14 14l-2.4 1.2.5-2.6-1.9-1.8 2.6-.4z"/></svg></span><h3>Collection &amp; decks</h3><ul><li>Over 90 beautifully illustrated cards across three types: monsters, spells and traps</li><li>Open card packs and collect every rarity from Common to Legendary</li><li>Build and save multiple decks and find your best combo</li></ul></section>
+<section class="card"><span class="ico"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"/></svg></span><h3>Rewards</h3><ul><li>Daily login rewards, daily quests and achievements</li><li>A 30-tier season pass</li><li>Weekly and global leaderboards</li></ul></section>
+<section class="card"><span class="ico"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span><h3>Fair &amp; friendly</h3><p>Preset emotes instead of free chat: no toxic behavior. Watch replays of your matches and learn from every duel.</p></section>
 </div>
 <div class="tail"><p>Available in 11 languages. Card Duel is free to play with optional in-app purchases and optional rewarded video ads.</p>
 <p>Download now and prove you are the best duelist!</p>
 </div>
+  <section class="gallery" id="cards" aria-label="Cards">
+  <h2>Cards</h2>
+  <p class="g-sub">Explore every card in the game · <span id="gcount">99</span></p>
+  <div class="g-tools">
+    <input id="gsearch" type="search" placeholder="Search cards…" aria-label="Search cards…">
+    <div class="chips" data-group="t"><button type="button" class="chip on" data-t="">All</button><button type="button" class="chip" data-t="monster">Monster</button><button type="button" class="chip" data-t="spell">Spell</button><button type="button" class="chip" data-t="trap">Trap</button></div>
+    <div class="chips" data-group="r"><button type="button" class="chip on" data-r="">All</button><button type="button" class="chip" data-r="common">Common</button><button type="button" class="chip" data-r="rare">Rare</button><button type="button" class="chip" data-r="epic">Epic</button><button type="button" class="chip" data-r="legendary">Legendary</button></div>
+  </div>
+  <div class="gcards">
+    <button type="button" class="gcard r-legendary" data-i="0" data-t="monster" data-r="legendary" data-q="leviathan when summoned: destroy all your opponent's monsters in defense position.">
+      <img src="/cardduel/assets/cards/leviathan.jpg" alt="Leviathan" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Monster / Effect</span><span class="g-lv">★ 8</span></span>
+      <span class="g-bot"><span class="g-name">Leviathan</span><span class="g-stats"><b>ATK 3000</b><b>DEF 2600</b></span></span>
+    </button>
+    <button type="button" class="gcard r-legendary" data-i="1" data-t="monster" data-r="legendary" data-q="malakar the crownless when summoned: destroy your opponent's monster with the highest atk.">
+      <img src="/cardduel/assets/cards/malakar_the_crownless.jpg" alt="Malakar the Crownless" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Monster / Effect</span><span class="g-lv">★ 8</span></span>
+      <span class="g-bot"><span class="g-name">Malakar the Crownless</span><span class="g-stats"><b>ATK 3200</b><b>DEF 2800</b></span></span>
+    </button>
+    <button type="button" class="gcard r-legendary" data-i="2" data-t="monster" data-r="legendary" data-q="sky dragon the legendary dragon who rules the clouds. requires 2 tributes to summon.">
+      <img src="/cardduel/assets/cards/sky_dragon.jpg" alt="Sky Dragon" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Monster</span><span class="g-lv">★ 8</span></span>
+      <span class="g-bot"><span class="g-name">Sky Dragon</span><span class="g-stats"><b>ATK 3000</b><b>DEF 2500</b></span></span>
+    </button>
+    <button type="button" class="gcard r-legendary" data-i="3" data-t="monster" data-r="legendary" data-q="archmage aurelian when summoned: draw 2 card(s).">
+      <img src="/cardduel/assets/cards/archmage_aurelian.jpg" alt="Archmage Aurelian" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Monster / Effect</span><span class="g-lv">★ 7</span></span>
+      <span class="g-bot"><span class="g-name">Archmage Aurelian</span><span class="g-stats"><b>ATK 2600</b><b>DEF 2300</b></span></span>
+    </button>
+    <button type="button" class="gcard r-legendary" data-i="4" data-t="monster" data-r="legendary" data-q="commander varek when summoned: all face-up monsters you control gain 500 atk.">
+      <img src="/cardduel/assets/cards/commander_varek.jpg" alt="Commander Varek" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Monster / Effect</span><span class="g-lv">★ 7</span></span>
+      <span class="g-bot"><span class="g-name">Commander Varek</span><span class="g-stats"><b>ATK 2700</b><b>DEF 2500</b></span></span>
+    </button>
+    <button type="button" class="gcard r-legendary" data-i="5" data-t="monster" data-r="legendary" data-q="obsidian dragon if destroyed while face-up: deal 1000 damage to your opponent.">
+      <img src="/cardduel/assets/cards/obsidian_dragon.jpg" alt="Obsidian Dragon" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Monster / Effect</span><span class="g-lv">★ 7</span></span>
+      <span class="g-bot"><span class="g-name">Obsidian Dragon</span><span class="g-stats"><b>ATK 2800</b><b>DEF 2200</b></span></span>
+    </button>
+    <button type="button" class="gcard r-epic" data-i="6" data-t="monster" data-r="epic" data-q="mountain colossus when it wakes, the maps must be redrawn.">
+      <img src="/cardduel/assets/cards/mountain_colossus.jpg" alt="Mountain Colossus" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Monster</span><span class="g-lv">★ 8</span></span>
+      <span class="g-bot"><span class="g-name">Mountain Colossus</span><span class="g-stats"><b>ATK 2800</b><b>DEF 3000</b></span></span>
+    </button>
+    <button type="button" class="gcard r-epic" data-i="7" data-t="monster" data-r="epic" data-q="ash warden sera when summoned: deal 500 damage to your opponent.">
+      <img src="/cardduel/assets/cards/ash_warden_sera.jpg" alt="Ash Warden Sera" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Monster / Effect</span><span class="g-lv">★ 6</span></span>
+      <span class="g-bot"><span class="g-name">Ash Warden Sera</span><span class="g-stats"><b>ATK 2300</b><b>DEF 1600</b></span></span>
+    </button>
+    <button type="button" class="gcard r-epic" data-i="8" data-t="monster" data-r="epic" data-q="captain doran flip: destroy your opponent's monster with the lowest atk.">
+      <img src="/cardduel/assets/cards/captain_doran.jpg" alt="Captain Doran" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Monster / Effect</span><span class="g-lv">★ 6</span></span>
+      <span class="g-bot"><span class="g-name">Captain Doran</span><span class="g-stats"><b>ATK 1900</b><b>DEF 2600</b></span></span>
+    </button>
+    <button type="button" class="gcard r-epic" data-i="9" data-t="monster" data-r="epic" data-q="sea witch morwen when summoned: special summon the monster with the highest atk from your graveyard in attack position.">
+      <img src="/cardduel/assets/cards/sea_witch_morwen.jpg" alt="Sea Witch Morwen" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Monster / Effect</span><span class="g-lv">★ 6</span></span>
+      <span class="g-bot"><span class="g-name">Sea Witch Morwen</span><span class="g-stats"><b>ATK 2200</b><b>DEF 2000</b></span></span>
+    </button>
+    <button type="button" class="gcard r-epic" data-i="10" data-t="monster" data-r="epic" data-q="thunder ogre a giant whose every step shakes the earth. requires 1 tribute to summon.">
+      <img src="/cardduel/assets/cards/thunder_ogre.jpg" alt="Thunder Ogre" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Monster</span><span class="g-lv">★ 6</span></span>
+      <span class="g-bot"><span class="g-name">Thunder Ogre</span><span class="g-stats"><b>ATK 2400</b><b>DEF 1800</b></span></span>
+    </button>
+    <button type="button" class="gcard r-epic" data-i="11" data-t="monster" data-r="epic" data-q="twin-headed wyvern two heads, one hunger.">
+      <img src="/cardduel/assets/cards/twin_headed_wyvern.jpg" alt="Twin-Headed Wyvern" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Monster</span><span class="g-lv">★ 6</span></span>
+      <span class="g-bot"><span class="g-name">Twin-Headed Wyvern</span><span class="g-stats"><b>ATK 2500</b><b>DEF 1900</b></span></span>
+    </button>
+    <button type="button" class="gcard r-epic" data-i="12" data-t="monster" data-r="epic" data-q="void assassin its target never sees it, only its own end.">
+      <img src="/cardduel/assets/cards/void_assassin.jpg" alt="Void Assassin" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Monster</span><span class="g-lv">★ 6</span></span>
+      <span class="g-bot"><span class="g-name">Void Assassin</span><span class="g-stats"><b>ATK 2500</b><b>DEF 1200</b></span></span>
+    </button>
+    <button type="button" class="gcard r-epic" data-i="13" data-t="monster" data-r="epic" data-q="windrider lyra when summoned: draw 1 card(s).">
+      <img src="/cardduel/assets/cards/windrider_lyra.jpg" alt="Windrider Lyra" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Monster / Effect</span><span class="g-lv">★ 6</span></span>
+      <span class="g-bot"><span class="g-name">Windrider Lyra</span><span class="g-stats"><b>ATK 2400</b><b>DEF 1500</b></span></span>
+    </button>
+    <button type="button" class="gcard r-epic" data-i="14" data-t="monster" data-r="epic" data-q="abyss serpent an ancient serpent rising from the deep waters. requires 1 tribute to summon.">
+      <img src="/cardduel/assets/cards/abyss_serpent.jpg" alt="Abyss Serpent" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Monster</span><span class="g-lv">★ 5</span></span>
+      <span class="g-bot"><span class="g-name">Abyss Serpent</span><span class="g-stats"><b>ATK 2200</b><b>DEF 1500</b></span></span>
+    </button>
+    <button type="button" class="gcard r-epic" data-i="15" data-t="monster" data-r="epic" data-q="drake rider a rider bonded with a drake cannot be stopped in the sky.">
+      <img src="/cardduel/assets/cards/drake_rider.jpg" alt="Drake Rider" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Monster</span><span class="g-lv">★ 5</span></span>
+      <span class="g-bot"><span class="g-name">Drake Rider</span><span class="g-stats"><b>ATK 2300</b><b>DEF 1500</b></span></span>
+    </button>
+    <button type="button" class="gcard r-epic" data-i="16" data-t="monster" data-r="epic" data-q="shadow merchant vex flip: deal 1000 damage to your opponent and gain 1000 lp.">
+      <img src="/cardduel/assets/cards/shadow_merchant_vex.jpg" alt="Shadow Merchant Vex" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Monster / Effect</span><span class="g-lv">★ 5</span></span>
+      <span class="g-bot"><span class="g-name">Shadow Merchant Vex</span><span class="g-stats"><b>ATK 2000</b><b>DEF 1800</b></span></span>
+    </button>
+    <button type="button" class="gcard r-epic" data-i="17" data-t="monster" data-r="epic" data-q="mirror spirit flip: destroy your opponent's monster with the highest atk.">
+      <img src="/cardduel/assets/cards/mirror_spirit.jpg" alt="Mirror Spirit" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Monster / Effect</span><span class="g-lv">★ 3</span></span>
+      <span class="g-bot"><span class="g-name">Mirror Spirit</span><span class="g-stats"><b>ATK 700</b><b>DEF 1500</b></span></span>
+    </button>
+    <button type="button" class="gcard r-rare" data-i="18" data-t="monster" data-r="rare" data-q="magma giant with every step the earth melts and is reborn.">
+      <img src="/cardduel/assets/cards/magma_giant.jpg" alt="Magma Giant" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Monster</span><span class="g-lv">★ 7</span></span>
+      <span class="g-bot"><span class="g-name">Magma Giant</span><span class="g-stats"><b>ATK 2700</b><b>DEF 2000</b></span></span>
+    </button>
+    <button type="button" class="gcard r-rare" data-i="19" data-t="monster" data-r="rare" data-q="gale griffin its wingbeats send storms howling through the valleys.">
+      <img src="/cardduel/assets/cards/gale_griffin.jpg" alt="Gale Griffin" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Monster</span><span class="g-lv">★ 5</span></span>
+      <span class="g-bot"><span class="g-name">Gale Griffin</span><span class="g-stats"><b>ATK 2100</b><b>DEF 1400</b></span></span>
+    </button>
+    <button type="button" class="gcard r-rare" data-i="20" data-t="monster" data-r="rare" data-q="griffin knight knight of the skies, vanguard of the legion.">
+      <img src="/cardduel/assets/cards/griffin_knight.jpg" alt="Griffin Knight" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Monster</span><span class="g-lv">★ 5</span></span>
+      <span class="g-bot"><span class="g-name">Griffin Knight</span><span class="g-stats"><b>ATK 2200</b><b>DEF 1800</b></span></span>
+    </button>
+    <button type="button" class="gcard r-rare" data-i="21" data-t="monster" data-r="rare" data-q="kraken spawn even as a youngling, it sinks ships one by one.">
+      <img src="/cardduel/assets/cards/kraken_spawn.jpg" alt="Kraken Spawn" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Monster</span><span class="g-lv">★ 5</span></span>
+      <span class="g-bot"><span class="g-name">Kraken Spawn</span><span class="g-stats"><b>ATK 2100</b><b>DEF 1600</b></span></span>
+    </button>
+    <button type="button" class="gcard r-rare" data-i="22" data-t="monster" data-r="rare" data-q="crystal mage a wise mage who channels the power held within crystals.">
+      <img src="/cardduel/assets/cards/crystal_mage.jpg" alt="Crystal Mage" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Monster</span><span class="g-lv">★ 4</span></span>
+      <span class="g-bot"><span class="g-name">Crystal Mage</span><span class="g-stats"><b>ATK 1600</b><b>DEF 1400</b></span></span>
+    </button>
+    <button type="button" class="gcard r-rare" data-i="23" data-t="monster" data-r="rare" data-q="healer monk flip: gain 1500 lp.">
+      <img src="/cardduel/assets/cards/healer_monk.jpg" alt="Healer Monk" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Monster / Effect</span><span class="g-lv">★ 4</span></span>
+      <span class="g-bot"><span class="g-name">Healer Monk</span><span class="g-stats"><b>ATK 1100</b><b>DEF 1700</b></span></span>
+    </button>
+    <button type="button" class="gcard r-rare" data-i="24" data-t="monster" data-r="rare" data-q="iron knight a heavily armored knight who has never retreated from battle.">
+      <img src="/cardduel/assets/cards/iron_knight.jpg" alt="Iron Knight" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Monster</span><span class="g-lv">★ 4</span></span>
+      <span class="g-bot"><span class="g-name">Iron Knight</span><span class="g-stats"><b>ATK 1800</b><b>DEF 1200</b></span></span>
+    </button>
+    <button type="button" class="gcard r-rare" data-i="25" data-t="monster" data-r="rare" data-q="paladin of light if destroyed while face-up: gain 1000 lp.">
+      <img src="/cardduel/assets/cards/paladin_of_light.jpg" alt="Paladin of Light" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Monster / Effect</span><span class="g-lv">★ 4</span></span>
+      <span class="g-bot"><span class="g-name">Paladin of Light</span><span class="g-stats"><b>ATK 1700</b><b>DEF 1500</b></span></span>
+    </button>
+    <button type="button" class="gcard r-rare" data-i="26" data-t="monster" data-r="rare" data-q="shade wraith if destroyed while face-up: deal 500 damage to your opponent.">
+      <img src="/cardduel/assets/cards/shade_wraith.jpg" alt="Shade Wraith" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Monster / Effect</span><span class="g-lv">★ 4</span></span>
+      <span class="g-bot"><span class="g-name">Shade Wraith</span><span class="g-stats"><b>ATK 1500</b><b>DEF 1400</b></span></span>
+    </button>
+    <button type="button" class="gcard r-rare" data-i="27" data-t="monster" data-r="rare" data-q="spellweaver flip: all face-up monsters you control gain 300 atk.">
+      <img src="/cardduel/assets/cards/spellweaver.jpg" alt="Spellweaver" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Monster / Effect</span><span class="g-lv">★ 4</span></span>
+      <span class="g-bot"><span class="g-name">Spellweaver</span><span class="g-stats"><b>ATK 1400</b><b>DEF 1100</b></span></span>
+    </button>
+    <button type="button" class="gcard r-rare" data-i="28" data-t="monster" data-r="rare" data-q="storm elemental the sky's fury has taken a body.">
+      <img src="/cardduel/assets/cards/storm_elemental.jpg" alt="Storm Elemental" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Monster</span><span class="g-lv">★ 4</span></span>
+      <span class="g-bot"><span class="g-name">Storm Elemental</span><span class="g-stats"><b>ATK 1750</b><b>DEF 1000</b></span></span>
+    </button>
+    <button type="button" class="gcard r-rare" data-i="29" data-t="monster" data-r="rare" data-q="storm hawk a bird of prey whose wingbeats summon lightning.">
+      <img src="/cardduel/assets/cards/storm_hawk.jpg" alt="Storm Hawk" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Monster</span><span class="g-lv">★ 4</span></span>
+      <span class="g-bot"><span class="g-name">Storm Hawk</span><span class="g-stats"><b>ATK 1700</b><b>DEF 1000</b></span></span>
+    </button>
+    <button type="button" class="gcard r-rare" data-i="30" data-t="monster" data-r="rare" data-q="thunder falcon when summoned: deal 300 damage to your opponent.">
+      <img src="/cardduel/assets/cards/thunder_falcon.jpg" alt="Thunder Falcon" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Monster / Effect</span><span class="g-lv">★ 4</span></span>
+      <span class="g-bot"><span class="g-name">Thunder Falcon</span><span class="g-stats"><b>ATK 1600</b><b>DEF 800</b></span></span>
+    </button>
+    <button type="button" class="gcard r-rare" data-i="31" data-t="monster" data-r="rare" data-q="volatile golem if destroyed while face-up: deal 800 damage to your opponent.">
+      <img src="/cardduel/assets/cards/volatile_golem.jpg" alt="Volatile Golem" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Monster / Effect</span><span class="g-lv">★ 4</span></span>
+      <span class="g-bot"><span class="g-name">Volatile Golem</span><span class="g-stats"><b>ATK 1400</b><b>DEF 1000</b></span></span>
+    </button>
+    <button type="button" class="gcard r-rare" data-i="32" data-t="monster" data-r="rare" data-q="war priest when summoned: gain 600 lp.">
+      <img src="/cardduel/assets/cards/war_priest.jpg" alt="War Priest" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Monster / Effect</span><span class="g-lv">★ 4</span></span>
+      <span class="g-bot"><span class="g-name">War Priest</span><span class="g-stats"><b>ATK 1500</b><b>DEF 1300</b></span></span>
+    </button>
+    <button type="button" class="gcard r-rare" data-i="33" data-t="monster" data-r="rare" data-q="phoenix hatchling if destroyed while face-up: gain 800 lp.">
+      <img src="/cardduel/assets/cards/phoenix_hatchling.jpg" alt="Phoenix Hatchling" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Monster / Effect</span><span class="g-lv">★ 3</span></span>
+      <span class="g-bot"><span class="g-name">Phoenix Hatchling</span><span class="g-stats"><b>ATK 1100</b><b>DEF 800</b></span></span>
+    </button>
+    <button type="button" class="gcard r-rare" data-i="34" data-t="monster" data-r="rare" data-q="burrowing mole flip: destroy your opponent's monster with the lowest atk.">
+      <img src="/cardduel/assets/cards/burrowing_mole.jpg" alt="Burrowing Mole" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Monster / Effect</span><span class="g-lv">★ 2</span></span>
+      <span class="g-bot"><span class="g-name">Burrowing Mole</span><span class="g-stats"><b>ATK 700</b><b>DEF 900</b></span></span>
+    </button>
+    <button type="button" class="gcard r-common" data-i="35" data-t="monster" data-r="common" data-q="arcane golem mages built it to guard the tower loyally.">
+      <img src="/cardduel/assets/cards/arcane_golem.jpg" alt="Arcane Golem" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Monster</span><span class="g-lv">★ 4</span></span>
+      <span class="g-bot"><span class="g-name">Arcane Golem</span><span class="g-stats"><b>ATK 1600</b><b>DEF 1600</b></span></span>
+    </button>
+    <button type="button" class="gcard r-common" data-i="36" data-t="monster" data-r="common" data-q="flame hound it never loses its prey's scent, not even among the ashes.">
+      <img src="/cardduel/assets/cards/flame_hound.jpg" alt="Flame Hound" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Monster</span><span class="g-lv">★ 4</span></span>
+      <span class="g-bot"><span class="g-name">Flame Hound</span><span class="g-stats"><b>ATK 1700</b><b>DEF 900</b></span></span>
+    </button>
+    <button type="button" class="gcard r-common" data-i="37" data-t="monster" data-r="common" data-q="night stalker darkness is its refuge; silence, its weapon.">
+      <img src="/cardduel/assets/cards/night_stalker.jpg" alt="Night Stalker" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Monster</span><span class="g-lv">★ 4</span></span>
+      <span class="g-bot"><span class="g-name">Night Stalker</span><span class="g-stats"><b>ATK 1800</b><b>DEF 600</b></span></span>
+    </button>
+    <button type="button" class="gcard r-common" data-i="38" data-t="monster" data-r="common" data-q="rock crusher every rock in its path turns to dust.">
+      <img src="/cardduel/assets/cards/rock_crusher.jpg" alt="Rock Crusher" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Monster</span><span class="g-lv">★ 4</span></span>
+      <span class="g-bot"><span class="g-name">Rock Crusher</span><span class="g-stats"><b>ATK 1800</b><b>DEF 1100</b></span></span>
+    </button>
+    <button type="button" class="gcard r-common" data-i="39" data-t="monster" data-r="common" data-q="shield bearer it never steps back, for those behind it.">
+      <img src="/cardduel/assets/cards/shield_bearer.jpg" alt="Shield Bearer" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Monster</span><span class="g-lv">★ 4</span></span>
+      <span class="g-bot"><span class="g-name">Shield Bearer</span><span class="g-stats"><b>ATK 1000</b><b>DEF 2100</b></span></span>
+    </button>
+    <button type="button" class="gcard r-common" data-i="40" data-t="monster" data-r="common" data-q="stone sentinel a patient, unbreakable guardian watching over ancient gates.">
+      <img src="/cardduel/assets/cards/stone_sentinel.jpg" alt="Stone Sentinel" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Monster</span><span class="g-lv">★ 4</span></span>
+      <span class="g-bot"><span class="g-name">Stone Sentinel</span><span class="g-stats"><b>ATK 800</b><b>DEF 2000</b></span></span>
+    </button>
+    <button type="button" class="gcard r-common" data-i="41" data-t="monster" data-r="common" data-q="tide caller when summoned: gain 700 lp.">
+      <img src="/cardduel/assets/cards/tide_caller.jpg" alt="Tide Caller" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Monster / Effect</span><span class="g-lv">★ 4</span></span>
+      <span class="g-bot"><span class="g-name">Tide Caller</span><span class="g-stats"><b>ATK 1400</b><b>DEF 1200</b></span></span>
+    </button>
+    <button type="button" class="gcard r-common" data-i="42" data-t="monster" data-r="common" data-q="dagger thief flip: deal 700 damage to your opponent.">
+      <img src="/cardduel/assets/cards/dagger_thief.jpg" alt="Dagger Thief" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Monster / Effect</span><span class="g-lv">★ 3</span></span>
+      <span class="g-bot"><span class="g-name">Dagger Thief</span><span class="g-stats"><b>ATK 1300</b><b>DEF 700</b></span></span>
+    </button>
+    <button type="button" class="gcard r-common" data-i="43" data-t="monster" data-r="common" data-q="dragon whelp a spark today, a wildfire tomorrow.">
+      <img src="/cardduel/assets/cards/dragon_whelp.jpg" alt="Dragon Whelp" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Monster</span><span class="g-lv">★ 3</span></span>
+      <span class="g-bot"><span class="g-name">Dragon Whelp</span><span class="g-stats"><b>ATK 1200</b><b>DEF 900</b></span></span>
+    </button>
+    <button type="button" class="gcard r-common" data-i="44" data-t="monster" data-r="common" data-q="earth shaman when summoned: gain 500 lp.">
+      <img src="/cardduel/assets/cards/earth_shaman.jpg" alt="Earth Shaman" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Monster / Effect</span><span class="g-lv">★ 3</span></span>
+      <span class="g-bot"><span class="g-name">Earth Shaman</span><span class="g-stats"><b>ATK 1000</b><b>DEF 1300</b></span></span>
+    </button>
+    <button type="button" class="gcard r-common" data-i="45" data-t="monster" data-r="common" data-q="ember fox a nimble fox roaming the ashes, its tail scattering sparks.">
+      <img src="/cardduel/assets/cards/ember_fox.jpg" alt="Ember Fox" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Monster</span><span class="g-lv">★ 3</span></span>
+      <span class="g-bot"><span class="g-name">Ember Fox</span><span class="g-stats"><b>ATK 1300</b><b>DEF 900</b></span></span>
+    </button>
+    <button type="button" class="gcard r-common" data-i="46" data-t="monster" data-r="common" data-q="granite tortoise its shell has weathered a hundred years of storms.">
+      <img src="/cardduel/assets/cards/granite_tortoise.jpg" alt="Granite Tortoise" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Monster</span><span class="g-lv">★ 3</span></span>
+      <span class="g-bot"><span class="g-name">Granite Tortoise</span><span class="g-stats"><b>ATK 600</b><b>DEF 2000</b></span></span>
+    </button>
+    <button type="button" class="gcard r-common" data-i="47" data-t="monster" data-r="common" data-q="legion footman alone, a soldier; in the ranks, a wall.">
+      <img src="/cardduel/assets/cards/legion_footman.jpg" alt="Legion Footman" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Monster</span><span class="g-lv">★ 3</span></span>
+      <span class="g-bot"><span class="g-name">Legion Footman</span><span class="g-stats"><b>ATK 1200</b><b>DEF 1200</b></span></span>
+    </button>
+    <button type="button" class="gcard r-common" data-i="48" data-t="monster" data-r="common" data-q="reef crab its coral armor braves the harshest waves.">
+      <img src="/cardduel/assets/cards/reef_crab.jpg" alt="Reef Crab" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Monster</span><span class="g-lv">★ 3</span></span>
+      <span class="g-bot"><span class="g-name">Reef Crab</span><span class="g-stats"><b>ATK 800</b><b>DEF 1800</b></span></span>
+    </button>
+    <button type="button" class="gcard r-common" data-i="49" data-t="monster" data-r="common" data-q="rune scholar when summoned: draw 1 card(s).">
+      <img src="/cardduel/assets/cards/rune_scholar.jpg" alt="Rune Scholar" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Monster / Effect</span><span class="g-lv">★ 3</span></span>
+      <span class="g-bot"><span class="g-name">Rune Scholar</span><span class="g-stats"><b>ATK 900</b><b>DEF 1300</b></span></span>
+    </button>
+    <button type="button" class="gcard r-common" data-i="50" data-t="monster" data-r="common" data-q="shadow rogue a swift, silent assassin who vanishes into the dark of night.">
+      <img src="/cardduel/assets/cards/shadow_rogue.jpg" alt="Shadow Rogue" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Monster</span><span class="g-lv">★ 3</span></span>
+      <span class="g-bot"><span class="g-name">Shadow Rogue</span><span class="g-stats"><b>ATK 1500</b><b>DEF 500</b></span></span>
+    </button>
+    <button type="button" class="gcard r-common" data-i="51" data-t="monster" data-r="common" data-q="tomb beetle if destroyed while face-up: draw 1 card.">
+      <img src="/cardduel/assets/cards/tomb_beetle.jpg" alt="Tomb Beetle" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Monster / Effect</span><span class="g-lv">★ 3</span></span>
+      <span class="g-bot"><span class="g-name">Tomb Beetle</span><span class="g-stats"><b>ATK 1200</b><b>DEF 800</b></span></span>
+    </button>
+    <button type="button" class="gcard r-common" data-i="52" data-t="monster" data-r="common" data-q="wise owl when summoned: draw 1 card.">
+      <img src="/cardduel/assets/cards/wise_owl.jpg" alt="Wise Owl" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Monster / Effect</span><span class="g-lv">★ 3</span></span>
+      <span class="g-bot"><span class="g-name">Wise Owl</span><span class="g-stats"><b>ATK 1000</b><b>DEF 1200</b></span></span>
+    </button>
+    <button type="button" class="gcard r-common" data-i="53" data-t="monster" data-r="common" data-q="cinder imp if destroyed while face-up: deal 300 damage to your opponent.">
+      <img src="/cardduel/assets/cards/cinder_imp.jpg" alt="Cinder Imp" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Monster / Effect</span><span class="g-lv">★ 2</span></span>
+      <span class="g-bot"><span class="g-name">Cinder Imp</span><span class="g-stats"><b>ATK 900</b><b>DEF 400</b></span></span>
+    </button>
+    <button type="button" class="gcard r-common" data-i="54" data-t="monster" data-r="common" data-q="cloud sprite flip: draw 1 card(s).">
+      <img src="/cardduel/assets/cards/cloud_sprite.jpg" alt="Cloud Sprite" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Monster / Effect</span><span class="g-lv">★ 2</span></span>
+      <span class="g-bot"><span class="g-name">Cloud Sprite</span><span class="g-stats"><b>ATK 600</b><b>DEF 1000</b></span></span>
+    </button>
+    <button type="button" class="gcard r-common" data-i="55" data-t="monster" data-r="common" data-q="moss golem a slow but sturdy creature awakened in the depths of the forest.">
+      <img src="/cardduel/assets/cards/moss_golem.jpg" alt="Moss Golem" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Monster</span><span class="g-lv">★ 2</span></span>
+      <span class="g-bot"><span class="g-name">Moss Golem</span><span class="g-stats"><b>ATK 500</b><b>DEF 1600</b></span></span>
+    </button>
+    <button type="button" class="gcard r-common" data-i="56" data-t="monster" data-r="common" data-q="spark fairy when summoned: deal 400 damage to your opponent.">
+      <img src="/cardduel/assets/cards/spark_fairy.jpg" alt="Spark Fairy" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Monster / Effect</span><span class="g-lv">★ 2</span></span>
+      <span class="g-bot"><span class="g-name">Spark Fairy</span><span class="g-stats"><b>ATK 800</b><b>DEF 600</b></span></span>
+    </button>
+    <button type="button" class="gcard r-common" data-i="57" data-t="monster" data-r="common" data-q="mana wisp if destroyed while face-up: draw 1 card(s).">
+      <img src="/cardduel/assets/cards/mana_wisp.jpg" alt="Mana Wisp" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Monster / Effect</span><span class="g-lv">★ 1</span></span>
+      <span class="g-bot"><span class="g-name">Mana Wisp</span><span class="g-stats"><b>ATK 300</b><b>DEF 300</b></span></span>
+    </button>
+    <button type="button" class="gcard r-legendary" data-i="58" data-t="spell" data-r="legendary" data-q="crown shard continuous spell: while this card is face-up on the field, all monsters you control gain 500 atk.">
+      <img src="/cardduel/assets/cards/crown_shard.jpg" alt="Crown Shard" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Spell</span></span>
+      <span class="g-bot"><span class="g-name">Crown Shard</span></span>
+    </button>
+    <button type="button" class="gcard r-epic" data-i="59" data-t="spell" data-r="epic" data-q="cataclysm destroy all monsters on the field.">
+      <img src="/cardduel/assets/cards/cataclysm.jpg" alt="Cataclysm" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Spell</span></span>
+      <span class="g-bot"><span class="g-name">Cataclysm</span></span>
+    </button>
+    <button type="button" class="gcard r-epic" data-i="60" data-t="spell" data-r="epic" data-q="dragon's roar all face-up monsters you control gain 600 atk.">
+      <img src="/cardduel/assets/cards/dragons_roar.jpg" alt="Dragon's Roar" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Spell</span></span>
+      <span class="g-bot"><span class="g-name">Dragon's Roar</span></span>
+    </button>
+    <button type="button" class="gcard r-epic" data-i="61" data-t="spell" data-r="epic" data-q="holy judgment destroy your opponent's monster with the highest atk.">
+      <img src="/cardduel/assets/cards/holy_judgment.jpg" alt="Holy Judgment" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Spell</span></span>
+      <span class="g-bot"><span class="g-name">Holy Judgment</span></span>
+    </button>
+    <button type="button" class="gcard r-epic" data-i="62" data-t="spell" data-r="epic" data-q="sky sanctuary continuous spell: while this card is face-up on the field, all monsters you control gain 400 atk.">
+      <img src="/cardduel/assets/cards/sky_sanctuary.jpg" alt="Sky Sanctuary" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Spell</span></span>
+      <span class="g-bot"><span class="g-name">Sky Sanctuary</span></span>
+    </button>
+    <button type="button" class="gcard r-epic" data-i="63" data-t="spell" data-r="epic" data-q="time rift draw 3 card(s).">
+      <img src="/cardduel/assets/cards/time_rift.jpg" alt="Time Rift" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Spell</span></span>
+      <span class="g-bot"><span class="g-name">Time Rift</span></span>
+    </button>
+    <button type="button" class="gcard r-rare" data-i="64" data-t="spell" data-r="rare" data-q="fortune scroll draw 2 cards from your deck.">
+      <img src="/cardduel/assets/cards/fortune_scroll.jpg" alt="Fortune Scroll" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Spell</span></span>
+      <span class="g-bot"><span class="g-name">Fortune Scroll</span></span>
+    </button>
+    <button type="button" class="gcard r-rare" data-i="65" data-t="spell" data-r="rare" data-q="inferno blast deal 1000 damage to your opponent.">
+      <img src="/cardduel/assets/cards/inferno_blast.jpg" alt="Inferno Blast" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Spell</span></span>
+      <span class="g-bot"><span class="g-name">Inferno Blast</span></span>
+    </button>
+    <button type="button" class="gcard r-rare" data-i="66" data-t="spell" data-r="rare" data-q="lightning strike quick spell: target 1 face-up monster your opponent controls; it loses 1000 atk.">
+      <img src="/cardduel/assets/cards/lightning_strike.jpg" alt="Lightning Strike" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Quick Spell</span></span>
+      <span class="g-bot"><span class="g-name">Lightning Strike</span></span>
+    </button>
+    <button type="button" class="gcard r-rare" data-i="67" data-t="spell" data-r="rare" data-q="ocean's blessing special summon the monster with the highest atk from your graveyard in attack position.">
+      <img src="/cardduel/assets/cards/oceans_blessing.jpg" alt="Ocean's Blessing" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Spell</span></span>
+      <span class="g-bot"><span class="g-name">Ocean's Blessing</span></span>
+    </button>
+    <button type="button" class="gcard r-rare" data-i="68" data-t="spell" data-r="rare" data-q="rally banner continuous spell: while this card is face-up on the field, all monsters you control gain 300 atk.">
+      <img src="/cardduel/assets/cards/rally_banner.jpg" alt="Rally Banner" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Spell</span></span>
+      <span class="g-bot"><span class="g-name">Rally Banner</span></span>
+    </button>
+    <button type="button" class="gcard r-rare" data-i="69" data-t="spell" data-r="rare" data-q="shatter target 1 monster on your opponent's field and destroy it.">
+      <img src="/cardduel/assets/cards/shatter.jpg" alt="Shatter" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Spell</span></span>
+      <span class="g-bot"><span class="g-name">Shatter</span></span>
+    </button>
+    <button type="button" class="gcard r-rare" data-i="70" data-t="spell" data-r="rare" data-q="soul drain deal 700 damage to your opponent and gain 700 lp.">
+      <img src="/cardduel/assets/cards/soul_drain.jpg" alt="Soul Drain" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Spell</span></span>
+      <span class="g-bot"><span class="g-name">Soul Drain</span></span>
+    </button>
+    <button type="button" class="gcard r-rare" data-i="71" data-t="spell" data-r="rare" data-q="tidal wave target 1 monster your opponent controls; return it to the hand.">
+      <img src="/cardduel/assets/cards/tidal_wave.jpg" alt="Tidal Wave" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Spell</span></span>
+      <span class="g-bot"><span class="g-name">Tidal Wave</span></span>
+    </button>
+    <button type="button" class="gcard r-rare" data-i="72" data-t="spell" data-r="rare" data-q="war cry target 1 face-up monster you control; it gains 700 atk.">
+      <img src="/cardduel/assets/cards/war_cry.jpg" alt="War Cry" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Spell</span></span>
+      <span class="g-bot"><span class="g-name">War Cry</span></span>
+    </button>
+    <button type="button" class="gcard r-rare" data-i="73" data-t="spell" data-r="rare" data-q="flames of war continuous spell: while this card is face-up on the field, all monsters you control gain 300 atk.">
+      <img src="/cardduel/assets/cards/war_flames.jpg" alt="Flames of War" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Spell</span></span>
+      <span class="g-bot"><span class="g-name">Flames of War</span></span>
+    </button>
+    <button type="button" class="gcard r-rare" data-i="74" data-t="spell" data-r="rare" data-q="whirlwind quick spell: target 1 spell/trap on your opponent's field and destroy it.">
+      <img src="/cardduel/assets/cards/whirlwind.jpg" alt="Whirlwind" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Quick Spell</span></span>
+      <span class="g-bot"><span class="g-name">Whirlwind</span></span>
+    </button>
+    <button type="button" class="gcard r-common" data-i="75" data-t="spell" data-r="common" data-q="adrenaline quick spell: target 1 face-up monster you control; it gains 500 atk.">
+      <img src="/cardduel/assets/cards/adrenaline.jpg" alt="Adrenaline" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Quick Spell</span></span>
+      <span class="g-bot"><span class="g-name">Adrenaline</span></span>
+    </button>
+    <button type="button" class="gcard r-common" data-i="76" data-t="spell" data-r="common" data-q="arcane missile quick spell: deal 500 damage to your opponent.">
+      <img src="/cardduel/assets/cards/arcane_missile.jpg" alt="Arcane Missile" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Quick Spell</span></span>
+      <span class="g-bot"><span class="g-name">Arcane Missile</span></span>
+    </button>
+    <button type="button" class="gcard r-common" data-i="77" data-t="spell" data-r="common" data-q="ember rain destroy all your opponent's monsters in defense position.">
+      <img src="/cardduel/assets/cards/ember_rain.jpg" alt="Ember Rain" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Spell</span></span>
+      <span class="g-bot"><span class="g-name">Ember Rain</span></span>
+    </button>
+    <button type="button" class="gcard r-common" data-i="78" data-t="spell" data-r="common" data-q="fire bolt deal 600 damage to your opponent.">
+      <img src="/cardduel/assets/cards/fire_bolt.jpg" alt="Fire Bolt" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Spell</span></span>
+      <span class="g-bot"><span class="g-name">Fire Bolt</span></span>
+    </button>
+    <button type="button" class="gcard r-common" data-i="79" data-t="spell" data-r="common" data-q="healing rain quick spell: gain 800 lp.">
+      <img src="/cardduel/assets/cards/healing_rain.jpg" alt="Healing Rain" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Quick Spell</span></span>
+      <span class="g-bot"><span class="g-name">Healing Rain</span></span>
+    </button>
+    <button type="button" class="gcard r-common" data-i="80" data-t="spell" data-r="common" data-q="healing spring gain 1000 lp.">
+      <img src="/cardduel/assets/cards/healing_spring.jpg" alt="Healing Spring" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Spell</span></span>
+      <span class="g-bot"><span class="g-name">Healing Spring</span></span>
+    </button>
+    <button type="button" class="gcard r-common" data-i="81" data-t="spell" data-r="common" data-q="mind blast destroy your opponent's monster with the lowest atk.">
+      <img src="/cardduel/assets/cards/mind_blast.jpg" alt="Mind Blast" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Spell</span></span>
+      <span class="g-bot"><span class="g-name">Mind Blast</span></span>
+    </button>
+    <button type="button" class="gcard r-common" data-i="82" data-t="spell" data-r="common" data-q="poisoned blade quick spell: target 1 face-up monster your opponent controls; it loses 600 atk.">
+      <img src="/cardduel/assets/cards/poisoned_blade.jpg" alt="Poisoned Blade" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Quick Spell</span></span>
+      <span class="g-bot"><span class="g-name">Poisoned Blade</span></span>
+    </button>
+    <button type="button" class="gcard r-common" data-i="83" data-t="spell" data-r="common" data-q="stoneskin quick spell: all face-up monsters you control gain 300 atk.">
+      <img src="/cardduel/assets/cards/stoneskin.jpg" alt="Stoneskin" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Quick Spell</span></span>
+      <span class="g-bot"><span class="g-name">Stoneskin</span></span>
+    </button>
+    <button type="button" class="gcard r-common" data-i="84" data-t="spell" data-r="common" data-q="tailwind all face-up monsters you control gain 400 atk.">
+      <img src="/cardduel/assets/cards/tailwind.jpg" alt="Tailwind" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Spell</span></span>
+      <span class="g-bot"><span class="g-name">Tailwind</span></span>
+    </button>
+    <button type="button" class="gcard r-epic" data-i="85" data-t="trap" data-r="epic" data-q="curse of weakness continuous trap: while this card is face-up on the field, all monsters your opponent controls lose 500 atk.">
+      <img src="/cardduel/assets/cards/curse_of_weakness.jpg" alt="Curse of Weakness" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Trap</span></span>
+      <span class="g-bot"><span class="g-name">Curse of Weakness</span></span>
+    </button>
+    <button type="button" class="gcard r-epic" data-i="86" data-t="trap" data-r="epic" data-q="seal of denial counter trap: negate your opponent's last card in the chain.">
+      <img src="/cardduel/assets/cards/seal_of_denial.jpg" alt="Seal of Denial" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Trap</span></span>
+      <span class="g-bot"><span class="g-name">Seal of Denial</span></span>
+    </button>
+    <button type="button" class="gcard r-rare" data-i="87" data-t="trap" data-r="rare" data-q="counterspell counter trap: negate your opponent's last card in the chain.">
+      <img src="/cardduel/assets/cards/counterspell.jpg" alt="Counterspell" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Trap</span></span>
+      <span class="g-bot"><span class="g-name">Counterspell</span></span>
+    </button>
+    <button type="button" class="gcard r-rare" data-i="88" data-t="trap" data-r="rare" data-q="cyclone barrier target 1 monster your opponent controls; return it to the hand.">
+      <img src="/cardduel/assets/cards/cyclone_barrier.jpg" alt="Cyclone Barrier" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Trap</span></span>
+      <span class="g-bot"><span class="g-name">Cyclone Barrier</span></span>
+    </button>
+    <button type="button" class="gcard r-rare" data-i="89" data-t="trap" data-r="rare" data-q="reflect shield when your opponent declares an attack: destroy the attacking monster.">
+      <img src="/cardduel/assets/cards/reflect_shield.jpg" alt="Reflect Shield" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Trap</span></span>
+      <span class="g-bot"><span class="g-name">Reflect Shield</span></span>
+    </button>
+    <button type="button" class="gcard r-rare" data-i="90" data-t="trap" data-r="rare" data-q="shadow snare when your opponent summons a face-up monster with 1800 or more atk: destroy that monster.">
+      <img src="/cardduel/assets/cards/shadow_snare.jpg" alt="Shadow Snare" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Trap</span></span>
+      <span class="g-bot"><span class="g-name">Shadow Snare</span></span>
+    </button>
+    <button type="button" class="gcard r-rare" data-i="91" data-t="trap" data-r="rare" data-q="tremor continuous trap: while this card is face-up on the field, all monsters your opponent controls lose 300 atk.">
+      <img src="/cardduel/assets/cards/tremor.jpg" alt="Tremor" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Trap</span></span>
+      <span class="g-bot"><span class="g-name">Tremor</span></span>
+    </button>
+    <button type="button" class="gcard r-common" data-i="92" data-t="trap" data-r="common" data-q="divine shield when your opponent declares an attack: stop that attack.">
+      <img src="/cardduel/assets/cards/divine_shield.jpg" alt="Divine Shield" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Trap</span></span>
+      <span class="g-bot"><span class="g-name">Divine Shield</span></span>
+    </button>
+    <button type="button" class="gcard r-common" data-i="93" data-t="trap" data-r="common" data-q="wall of fire target 1 face-up monster your opponent controls; it loses 700 atk.">
+      <img src="/cardduel/assets/cards/fire_wall.jpg" alt="Wall of Fire" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Trap</span></span>
+      <span class="g-bot"><span class="g-name">Wall of Fire</span></span>
+    </button>
+    <button type="button" class="gcard r-common" data-i="94" data-t="trap" data-r="common" data-q="flame snare deal 800 damage to your opponent. can be used in response to any opponent's move.">
+      <img src="/cardduel/assets/cards/flame_snare.jpg" alt="Flame Snare" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Trap</span></span>
+      <span class="g-bot"><span class="g-name">Flame Snare</span></span>
+    </button>
+    <button type="button" class="gcard r-common" data-i="95" data-t="trap" data-r="common" data-q="mist veil when your opponent declares an attack: stop that attack.">
+      <img src="/cardduel/assets/cards/mist_veil.jpg" alt="Mist Veil" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Trap</span></span>
+      <span class="g-bot"><span class="g-name">Mist Veil</span></span>
+    </button>
+    <button type="button" class="gcard r-common" data-i="96" data-t="trap" data-r="common" data-q="pit trap when your opponent summons a face-up monster with 1000 or more atk: destroy that monster.">
+      <img src="/cardduel/assets/cards/pit_trap.jpg" alt="Pit Trap" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Trap</span></span>
+      <span class="g-bot"><span class="g-name">Pit Trap</span></span>
+    </button>
+    <button type="button" class="gcard r-common" data-i="97" data-t="trap" data-r="common" data-q="sinkhole when your opponent summons a face-up monster with 1500 or more atk: destroy that monster.">
+      <img src="/cardduel/assets/cards/sinkhole.jpg" alt="Sinkhole" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Trap</span></span>
+      <span class="g-bot"><span class="g-name">Sinkhole</span></span>
+    </button>
+    <button type="button" class="gcard r-common" data-i="98" data-t="trap" data-r="common" data-q="whirlpool deal 600 damage to your opponent and gain 600 lp.">
+      <img src="/cardduel/assets/cards/whirlpool.jpg" alt="Whirlpool" loading="lazy" width="440" height="447">
+      <span class="g-top"><span class="g-type">Trap</span></span>
+      <span class="g-bot"><span class="g-name">Whirlpool</span></span>
+    </button>
+  </div>
+  <p class="g-none" hidden>No cards found</p>
+  <dialog id="gdlg" class="gdlg">
+    <button type="button" class="gx" aria-label="Close">&times;</button>
+    <button type="button" class="gnav gp" aria-label="Previous">&#8249;</button>
+    <button type="button" class="gnav gn" aria-label="Next">&#8250;</button>
+    <div class="gbody"></div>
+  </dialog>
+  <script>window.CARDS=[{"id":"leviathan","n":"Leviathan","d":"When summoned: Destroy all your opponent's monsters in Defense Position.","t":"monster","tl":"Monster / Effect","r":"legendary","rl":"Legendary","l":8,"a":3000,"df":2600},{"id":"malakar_the_crownless","n":"Malakar the Crownless","d":"When summoned: Destroy your opponent's monster with the highest ATK.","t":"monster","tl":"Monster / Effect","r":"legendary","rl":"Legendary","l":8,"a":3200,"df":2800},{"id":"sky_dragon","n":"Sky Dragon","d":"The legendary dragon who rules the clouds. Requires 2 tributes to summon.","t":"monster","tl":"Monster","r":"legendary","rl":"Legendary","l":8,"a":3000,"df":2500},{"id":"archmage_aurelian","n":"Archmage Aurelian","d":"When summoned: Draw 2 card(s).","t":"monster","tl":"Monster / Effect","r":"legendary","rl":"Legendary","l":7,"a":2600,"df":2300},{"id":"commander_varek","n":"Commander Varek","d":"When summoned: All face-up monsters you control gain 500 ATK.","t":"monster","tl":"Monster / Effect","r":"legendary","rl":"Legendary","l":7,"a":2700,"df":2500},{"id":"obsidian_dragon","n":"Obsidian Dragon","d":"If destroyed while face-up: Deal 1000 damage to your opponent.","t":"monster","tl":"Monster / Effect","r":"legendary","rl":"Legendary","l":7,"a":2800,"df":2200},{"id":"mountain_colossus","n":"Mountain Colossus","d":"When it wakes, the maps must be redrawn.","t":"monster","tl":"Monster","r":"epic","rl":"Epic","l":8,"a":2800,"df":3000},{"id":"ash_warden_sera","n":"Ash Warden Sera","d":"When summoned: Deal 500 damage to your opponent.","t":"monster","tl":"Monster / Effect","r":"epic","rl":"Epic","l":6,"a":2300,"df":1600},{"id":"captain_doran","n":"Captain Doran","d":"FLIP: Destroy your opponent's monster with the lowest ATK.","t":"monster","tl":"Monster / Effect","r":"epic","rl":"Epic","l":6,"a":1900,"df":2600},{"id":"sea_witch_morwen","n":"Sea Witch Morwen","d":"When summoned: Special Summon the monster with the highest ATK from your graveyard in Attack Position.","t":"monster","tl":"Monster / Effect","r":"epic","rl":"Epic","l":6,"a":2200,"df":2000},{"id":"thunder_ogre","n":"Thunder Ogre","d":"A giant whose every step shakes the earth. Requires 1 tribute to summon.","t":"monster","tl":"Monster","r":"epic","rl":"Epic","l":6,"a":2400,"df":1800},{"id":"twin_headed_wyvern","n":"Twin-Headed Wyvern","d":"Two heads, one hunger.","t":"monster","tl":"Monster","r":"epic","rl":"Epic","l":6,"a":2500,"df":1900},{"id":"void_assassin","n":"Void Assassin","d":"Its target never sees it, only its own end.","t":"monster","tl":"Monster","r":"epic","rl":"Epic","l":6,"a":2500,"df":1200},{"id":"windrider_lyra","n":"Windrider Lyra","d":"When summoned: Draw 1 card(s).","t":"monster","tl":"Monster / Effect","r":"epic","rl":"Epic","l":6,"a":2400,"df":1500},{"id":"abyss_serpent","n":"Abyss Serpent","d":"An ancient serpent rising from the deep waters. Requires 1 tribute to summon.","t":"monster","tl":"Monster","r":"epic","rl":"Epic","l":5,"a":2200,"df":1500},{"id":"drake_rider","n":"Drake Rider","d":"A rider bonded with a drake cannot be stopped in the sky.","t":"monster","tl":"Monster","r":"epic","rl":"Epic","l":5,"a":2300,"df":1500},{"id":"shadow_merchant_vex","n":"Shadow Merchant Vex","d":"FLIP: Deal 1000 damage to your opponent and gain 1000 LP.","t":"monster","tl":"Monster / Effect","r":"epic","rl":"Epic","l":5,"a":2000,"df":1800},{"id":"mirror_spirit","n":"Mirror Spirit","d":"FLIP: Destroy your opponent's monster with the highest ATK.","t":"monster","tl":"Monster / Effect","r":"epic","rl":"Epic","l":3,"a":700,"df":1500},{"id":"magma_giant","n":"Magma Giant","d":"With every step the earth melts and is reborn.","t":"monster","tl":"Monster","r":"rare","rl":"Rare","l":7,"a":2700,"df":2000},{"id":"gale_griffin","n":"Gale Griffin","d":"Its wingbeats send storms howling through the valleys.","t":"monster","tl":"Monster","r":"rare","rl":"Rare","l":5,"a":2100,"df":1400},{"id":"griffin_knight","n":"Griffin Knight","d":"Knight of the skies, vanguard of the legion.","t":"monster","tl":"Monster","r":"rare","rl":"Rare","l":5,"a":2200,"df":1800},{"id":"kraken_spawn","n":"Kraken Spawn","d":"Even as a youngling, it sinks ships one by one.","t":"monster","tl":"Monster","r":"rare","rl":"Rare","l":5,"a":2100,"df":1600},{"id":"crystal_mage","n":"Crystal Mage","d":"A wise mage who channels the power held within crystals.","t":"monster","tl":"Monster","r":"rare","rl":"Rare","l":4,"a":1600,"df":1400},{"id":"healer_monk","n":"Healer Monk","d":"FLIP: Gain 1500 LP.","t":"monster","tl":"Monster / Effect","r":"rare","rl":"Rare","l":4,"a":1100,"df":1700},{"id":"iron_knight","n":"Iron Knight","d":"A heavily armored knight who has never retreated from battle.","t":"monster","tl":"Monster","r":"rare","rl":"Rare","l":4,"a":1800,"df":1200},{"id":"paladin_of_light","n":"Paladin of Light","d":"If destroyed while face-up: Gain 1000 LP.","t":"monster","tl":"Monster / Effect","r":"rare","rl":"Rare","l":4,"a":1700,"df":1500},{"id":"shade_wraith","n":"Shade Wraith","d":"If destroyed while face-up: Deal 500 damage to your opponent.","t":"monster","tl":"Monster / Effect","r":"rare","rl":"Rare","l":4,"a":1500,"df":1400},{"id":"spellweaver","n":"Spellweaver","d":"FLIP: All face-up monsters you control gain 300 ATK.","t":"monster","tl":"Monster / Effect","r":"rare","rl":"Rare","l":4,"a":1400,"df":1100},{"id":"storm_elemental","n":"Storm Elemental","d":"The sky's fury has taken a body.","t":"monster","tl":"Monster","r":"rare","rl":"Rare","l":4,"a":1750,"df":1000},{"id":"storm_hawk","n":"Storm Hawk","d":"A bird of prey whose wingbeats summon lightning.","t":"monster","tl":"Monster","r":"rare","rl":"Rare","l":4,"a":1700,"df":1000},{"id":"thunder_falcon","n":"Thunder Falcon","d":"When summoned: Deal 300 damage to your opponent.","t":"monster","tl":"Monster / Effect","r":"rare","rl":"Rare","l":4,"a":1600,"df":800},{"id":"volatile_golem","n":"Volatile Golem","d":"If destroyed while face-up: Deal 800 damage to your opponent.","t":"monster","tl":"Monster / Effect","r":"rare","rl":"Rare","l":4,"a":1400,"df":1000},{"id":"war_priest","n":"War Priest","d":"When summoned: Gain 600 LP.","t":"monster","tl":"Monster / Effect","r":"rare","rl":"Rare","l":4,"a":1500,"df":1300},{"id":"phoenix_hatchling","n":"Phoenix Hatchling","d":"If destroyed while face-up: Gain 800 LP.","t":"monster","tl":"Monster / Effect","r":"rare","rl":"Rare","l":3,"a":1100,"df":800},{"id":"burrowing_mole","n":"Burrowing Mole","d":"FLIP: Destroy your opponent's monster with the lowest ATK.","t":"monster","tl":"Monster / Effect","r":"rare","rl":"Rare","l":2,"a":700,"df":900},{"id":"arcane_golem","n":"Arcane Golem","d":"Mages built it to guard the tower loyally.","t":"monster","tl":"Monster","r":"common","rl":"Common","l":4,"a":1600,"df":1600},{"id":"flame_hound","n":"Flame Hound","d":"It never loses its prey's scent, not even among the ashes.","t":"monster","tl":"Monster","r":"common","rl":"Common","l":4,"a":1700,"df":900},{"id":"night_stalker","n":"Night Stalker","d":"Darkness is its refuge; silence, its weapon.","t":"monster","tl":"Monster","r":"common","rl":"Common","l":4,"a":1800,"df":600},{"id":"rock_crusher","n":"Rock Crusher","d":"Every rock in its path turns to dust.","t":"monster","tl":"Monster","r":"common","rl":"Common","l":4,"a":1800,"df":1100},{"id":"shield_bearer","n":"Shield Bearer","d":"It never steps back, for those behind it.","t":"monster","tl":"Monster","r":"common","rl":"Common","l":4,"a":1000,"df":2100},{"id":"stone_sentinel","n":"Stone Sentinel","d":"A patient, unbreakable guardian watching over ancient gates.","t":"monster","tl":"Monster","r":"common","rl":"Common","l":4,"a":800,"df":2000},{"id":"tide_caller","n":"Tide Caller","d":"When summoned: Gain 700 LP.","t":"monster","tl":"Monster / Effect","r":"common","rl":"Common","l":4,"a":1400,"df":1200},{"id":"dagger_thief","n":"Dagger Thief","d":"FLIP: Deal 700 damage to your opponent.","t":"monster","tl":"Monster / Effect","r":"common","rl":"Common","l":3,"a":1300,"df":700},{"id":"dragon_whelp","n":"Dragon Whelp","d":"A spark today, a wildfire tomorrow.","t":"monster","tl":"Monster","r":"common","rl":"Common","l":3,"a":1200,"df":900},{"id":"earth_shaman","n":"Earth Shaman","d":"When summoned: Gain 500 LP.","t":"monster","tl":"Monster / Effect","r":"common","rl":"Common","l":3,"a":1000,"df":1300},{"id":"ember_fox","n":"Ember Fox","d":"A nimble fox roaming the ashes, its tail scattering sparks.","t":"monster","tl":"Monster","r":"common","rl":"Common","l":3,"a":1300,"df":900},{"id":"granite_tortoise","n":"Granite Tortoise","d":"Its shell has weathered a hundred years of storms.","t":"monster","tl":"Monster","r":"common","rl":"Common","l":3,"a":600,"df":2000},{"id":"legion_footman","n":"Legion Footman","d":"Alone, a soldier; in the ranks, a wall.","t":"monster","tl":"Monster","r":"common","rl":"Common","l":3,"a":1200,"df":1200},{"id":"reef_crab","n":"Reef Crab","d":"Its coral armor braves the harshest waves.","t":"monster","tl":"Monster","r":"common","rl":"Common","l":3,"a":800,"df":1800},{"id":"rune_scholar","n":"Rune Scholar","d":"When summoned: Draw 1 card(s).","t":"monster","tl":"Monster / Effect","r":"common","rl":"Common","l":3,"a":900,"df":1300},{"id":"shadow_rogue","n":"Shadow Rogue","d":"A swift, silent assassin who vanishes into the dark of night.","t":"monster","tl":"Monster","r":"common","rl":"Common","l":3,"a":1500,"df":500},{"id":"tomb_beetle","n":"Tomb Beetle","d":"If destroyed while face-up: Draw 1 card.","t":"monster","tl":"Monster / Effect","r":"common","rl":"Common","l":3,"a":1200,"df":800},{"id":"wise_owl","n":"Wise Owl","d":"When summoned: Draw 1 card.","t":"monster","tl":"Monster / Effect","r":"common","rl":"Common","l":3,"a":1000,"df":1200},{"id":"cinder_imp","n":"Cinder Imp","d":"If destroyed while face-up: Deal 300 damage to your opponent.","t":"monster","tl":"Monster / Effect","r":"common","rl":"Common","l":2,"a":900,"df":400},{"id":"cloud_sprite","n":"Cloud Sprite","d":"FLIP: Draw 1 card(s).","t":"monster","tl":"Monster / Effect","r":"common","rl":"Common","l":2,"a":600,"df":1000},{"id":"moss_golem","n":"Moss Golem","d":"A slow but sturdy creature awakened in the depths of the forest.","t":"monster","tl":"Monster","r":"common","rl":"Common","l":2,"a":500,"df":1600},{"id":"spark_fairy","n":"Spark Fairy","d":"When summoned: Deal 400 damage to your opponent.","t":"monster","tl":"Monster / Effect","r":"common","rl":"Common","l":2,"a":800,"df":600},{"id":"mana_wisp","n":"Mana Wisp","d":"If destroyed while face-up: Draw 1 card(s).","t":"monster","tl":"Monster / Effect","r":"common","rl":"Common","l":1,"a":300,"df":300},{"id":"crown_shard","n":"Crown Shard","d":"Continuous Spell: While this card is face-up on the field, all monsters you control gain 500 ATK.","t":"spell","tl":"Spell","r":"legendary","rl":"Legendary","l":null,"a":null,"df":null},{"id":"cataclysm","n":"Cataclysm","d":"Destroy all monsters on the field.","t":"spell","tl":"Spell","r":"epic","rl":"Epic","l":null,"a":null,"df":null},{"id":"dragons_roar","n":"Dragon's Roar","d":"All face-up monsters you control gain 600 ATK.","t":"spell","tl":"Spell","r":"epic","rl":"Epic","l":null,"a":null,"df":null},{"id":"holy_judgment","n":"Holy Judgment","d":"Destroy your opponent's monster with the highest ATK.","t":"spell","tl":"Spell","r":"epic","rl":"Epic","l":null,"a":null,"df":null},{"id":"sky_sanctuary","n":"Sky Sanctuary","d":"Continuous Spell: While this card is face-up on the field, all monsters you control gain 400 ATK.","t":"spell","tl":"Spell","r":"epic","rl":"Epic","l":null,"a":null,"df":null},{"id":"time_rift","n":"Time Rift","d":"Draw 3 card(s).","t":"spell","tl":"Spell","r":"epic","rl":"Epic","l":null,"a":null,"df":null},{"id":"fortune_scroll","n":"Fortune Scroll","d":"Draw 2 cards from your deck.","t":"spell","tl":"Spell","r":"rare","rl":"Rare","l":null,"a":null,"df":null},{"id":"inferno_blast","n":"Inferno Blast","d":"Deal 1000 damage to your opponent.","t":"spell","tl":"Spell","r":"rare","rl":"Rare","l":null,"a":null,"df":null},{"id":"lightning_strike","n":"Lightning Strike","d":"Quick Spell: Target 1 face-up monster your opponent controls; it loses 1000 ATK.","t":"spell","tl":"Quick Spell","r":"rare","rl":"Rare","l":null,"a":null,"df":null},{"id":"oceans_blessing","n":"Ocean's Blessing","d":"Special Summon the monster with the highest ATK from your graveyard in Attack Position.","t":"spell","tl":"Spell","r":"rare","rl":"Rare","l":null,"a":null,"df":null},{"id":"rally_banner","n":"Rally Banner","d":"Continuous Spell: While this card is face-up on the field, all monsters you control gain 300 ATK.","t":"spell","tl":"Spell","r":"rare","rl":"Rare","l":null,"a":null,"df":null},{"id":"shatter","n":"Shatter","d":"Target 1 monster on your opponent's field and destroy it.","t":"spell","tl":"Spell","r":"rare","rl":"Rare","l":null,"a":null,"df":null},{"id":"soul_drain","n":"Soul Drain","d":"Deal 700 damage to your opponent and gain 700 LP.","t":"spell","tl":"Spell","r":"rare","rl":"Rare","l":null,"a":null,"df":null},{"id":"tidal_wave","n":"Tidal Wave","d":"Target 1 monster your opponent controls; return it to the hand.","t":"spell","tl":"Spell","r":"rare","rl":"Rare","l":null,"a":null,"df":null},{"id":"war_cry","n":"War Cry","d":"Target 1 face-up monster you control; it gains 700 ATK.","t":"spell","tl":"Spell","r":"rare","rl":"Rare","l":null,"a":null,"df":null},{"id":"war_flames","n":"Flames of War","d":"Continuous Spell: While this card is face-up on the field, all monsters you control gain 300 ATK.","t":"spell","tl":"Spell","r":"rare","rl":"Rare","l":null,"a":null,"df":null},{"id":"whirlwind","n":"Whirlwind","d":"Quick Spell: Target 1 spell/trap on your opponent's field and destroy it.","t":"spell","tl":"Quick Spell","r":"rare","rl":"Rare","l":null,"a":null,"df":null},{"id":"adrenaline","n":"Adrenaline","d":"Quick Spell: Target 1 face-up monster you control; it gains 500 ATK.","t":"spell","tl":"Quick Spell","r":"common","rl":"Common","l":null,"a":null,"df":null},{"id":"arcane_missile","n":"Arcane Missile","d":"Quick Spell: Deal 500 damage to your opponent.","t":"spell","tl":"Quick Spell","r":"common","rl":"Common","l":null,"a":null,"df":null},{"id":"ember_rain","n":"Ember Rain","d":"Destroy all your opponent's monsters in Defense Position.","t":"spell","tl":"Spell","r":"common","rl":"Common","l":null,"a":null,"df":null},{"id":"fire_bolt","n":"Fire Bolt","d":"Deal 600 damage to your opponent.","t":"spell","tl":"Spell","r":"common","rl":"Common","l":null,"a":null,"df":null},{"id":"healing_rain","n":"Healing Rain","d":"Quick Spell: Gain 800 LP.","t":"spell","tl":"Quick Spell","r":"common","rl":"Common","l":null,"a":null,"df":null},{"id":"healing_spring","n":"Healing Spring","d":"Gain 1000 LP.","t":"spell","tl":"Spell","r":"common","rl":"Common","l":null,"a":null,"df":null},{"id":"mind_blast","n":"Mind Blast","d":"Destroy your opponent's monster with the lowest ATK.","t":"spell","tl":"Spell","r":"common","rl":"Common","l":null,"a":null,"df":null},{"id":"poisoned_blade","n":"Poisoned Blade","d":"Quick Spell: Target 1 face-up monster your opponent controls; it loses 600 ATK.","t":"spell","tl":"Quick Spell","r":"common","rl":"Common","l":null,"a":null,"df":null},{"id":"stoneskin","n":"Stoneskin","d":"Quick Spell: All face-up monsters you control gain 300 ATK.","t":"spell","tl":"Quick Spell","r":"common","rl":"Common","l":null,"a":null,"df":null},{"id":"tailwind","n":"Tailwind","d":"All face-up monsters you control gain 400 ATK.","t":"spell","tl":"Spell","r":"common","rl":"Common","l":null,"a":null,"df":null},{"id":"curse_of_weakness","n":"Curse of Weakness","d":"Continuous Trap: While this card is face-up on the field, all monsters your opponent controls lose 500 ATK.","t":"trap","tl":"Trap","r":"epic","rl":"Epic","l":null,"a":null,"df":null},{"id":"seal_of_denial","n":"Seal of Denial","d":"Counter Trap: Negate your opponent's last card in the chain.","t":"trap","tl":"Trap","r":"epic","rl":"Epic","l":null,"a":null,"df":null},{"id":"counterspell","n":"Counterspell","d":"Counter Trap: Negate your opponent's last card in the chain.","t":"trap","tl":"Trap","r":"rare","rl":"Rare","l":null,"a":null,"df":null},{"id":"cyclone_barrier","n":"Cyclone Barrier","d":"Target 1 monster your opponent controls; return it to the hand.","t":"trap","tl":"Trap","r":"rare","rl":"Rare","l":null,"a":null,"df":null},{"id":"reflect_shield","n":"Reflect Shield","d":"When your opponent declares an attack: Destroy the attacking monster.","t":"trap","tl":"Trap","r":"rare","rl":"Rare","l":null,"a":null,"df":null},{"id":"shadow_snare","n":"Shadow Snare","d":"When your opponent summons a face-up monster with 1800 or more ATK: Destroy that monster.","t":"trap","tl":"Trap","r":"rare","rl":"Rare","l":null,"a":null,"df":null},{"id":"tremor","n":"Tremor","d":"Continuous Trap: While this card is face-up on the field, all monsters your opponent controls lose 300 ATK.","t":"trap","tl":"Trap","r":"rare","rl":"Rare","l":null,"a":null,"df":null},{"id":"divine_shield","n":"Divine Shield","d":"When your opponent declares an attack: Stop that attack.","t":"trap","tl":"Trap","r":"common","rl":"Common","l":null,"a":null,"df":null},{"id":"fire_wall","n":"Wall of Fire","d":"Target 1 face-up monster your opponent controls; it loses 700 ATK.","t":"trap","tl":"Trap","r":"common","rl":"Common","l":null,"a":null,"df":null},{"id":"flame_snare","n":"Flame Snare","d":"Deal 800 damage to your opponent. Can be used in response to any opponent's move.","t":"trap","tl":"Trap","r":"common","rl":"Common","l":null,"a":null,"df":null},{"id":"mist_veil","n":"Mist Veil","d":"When your opponent declares an attack: Stop that attack.","t":"trap","tl":"Trap","r":"common","rl":"Common","l":null,"a":null,"df":null},{"id":"pit_trap","n":"Pit Trap","d":"When your opponent summons a face-up monster with 1000 or more ATK: Destroy that monster.","t":"trap","tl":"Trap","r":"common","rl":"Common","l":null,"a":null,"df":null},{"id":"sinkhole","n":"Sinkhole","d":"When your opponent summons a face-up monster with 1500 or more ATK: Destroy that monster.","t":"trap","tl":"Trap","r":"common","rl":"Common","l":null,"a":null,"df":null},{"id":"whirlpool","n":"Whirlpool","d":"Deal 600 damage to your opponent and gain 600 LP.","t":"trap","tl":"Trap","r":"common","rl":"Common","l":null,"a":null,"df":null}];window.CUI={"level":"Level"};(function(){
+var S=document.getElementById('gsearch'),T=document.querySelectorAll('.gcard'),D=document.getElementById('gdlg'),B=D.querySelector('.gbody');
+var f={t:'',r:'',q:''},vis=[],cur=0;
+function apply(){vis=[];var n=0;for(var i=0;i<T.length;i++){var e=T[i],ok=(!f.t||e.dataset.t===f.t)&&(!f.r||e.dataset.r===f.r)&&(!f.q||e.dataset.q.indexOf(f.q)>=0);e.hidden=!ok;if(ok){vis.push(+e.dataset.i);n++;}}
+document.getElementById('gcount').textContent=n;document.querySelector('.g-none').hidden=n>0;}
+S.addEventListener('input',function(){f.q=S.value.trim().toLowerCase();apply();});
+document.querySelectorAll('.chips').forEach(function(g){g.addEventListener('click',function(e){var b=e.target.closest('.chip');if(!b)return;var k=g.dataset.group;f[k]=b.dataset[k];g.querySelectorAll('.chip').forEach(function(x){x.classList.toggle('on',x===b);});apply();});});
+function show(i){cur=i;var c=CARDS[i],st='';
+if(c.a!=null)st='<div class="gs"><span>ATK</span><b>'+c.a+'</b></div><div class="gs"><span>DEF</span><b>'+c.df+'</b></div><div class="gs"><span>'+CUI.level+'</span><b>'+c.l+'</b></div>';
+B.innerHTML='<div class="gimg r-'+c.r+'"><img src="/cardduel/assets/cards/'+c.id+'.jpg" alt=""></div><div class="ginfo"><span class="gbadge r-'+c.r+'">'+c.rl+'</span><h3>'+c.n+'</h3><p class="gt">'+c.tl+'</p><p class="gd">'+c.d+'</p><div class="gstats">'+st+'</div></div>';}
+function open(i){show(i);if(!D.open)D.showModal();}
+function step(d){var p=vis.indexOf(cur);if(p<0||!vis.length)return;show(vis[(p+d+vis.length)%vis.length]);}
+document.querySelector('.gcards').addEventListener('click',function(e){var b=e.target.closest('.gcard');if(b)open(+b.dataset.i);});
+D.querySelector('.gx').onclick=function(){D.close();};
+D.querySelector('.gp').onclick=function(){step(-1);};D.querySelector('.gn').onclick=function(){step(1);};
+D.addEventListener('click',function(e){if(e.target===D)D.close();});
+D.addEventListener('keydown',function(e){if(e.key==='ArrowLeft')step(-1);if(e.key==='ArrowRight')step(1);});
+apply();
+})();</script>
+</section>
 </main>
 <footer>
   <nav>
