@@ -318,6 +318,8 @@
   }
 
   .tile-icon svg { width: 100%; height: 100%; display: block; }
+  .tile-icon-img { padding: 0; overflow: hidden; background: none; }
+  .tile-icon-img img { width: 100%; height: 100%; display: block; object-fit: cover; border-radius: 10px; }
 
   .tile h3 {
     font-size: 1.15rem;
@@ -416,7 +418,7 @@
       <div class="hero-copy">
         <p class="eyebrow">YacSoft Stüdyosu</p>
         <h1 class="hero-title">Bulmacayı ödüle çeviren bir stüdyo.</h1>
-        <p class="hero-sub">Klasik oyun mekaniklerini gerçek zamanlı etkinliklere ve kazanılabilir ödüllere bağlıyoruz. İlk oyunumuz Sudoku Ödül Festivali, şimdi Google Play'de.</p>
+        <p class="hero-sub">Klasik oyun mekaniklerini gerçek zamanlı etkinliklere ve kazanılabilir ödüllere bağlıyoruz. Sudoku Ödül Festivali şimdi Google Play'de, kart düellosu Card Duel yakında geliyor.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.yacsoft.sudokuapp">Google Play'de Aç</a>
           <a class="btn btn-ghost" href="#apps">Uygulamaları Gör</a>
@@ -452,7 +454,7 @@
   <section class="apps" id="apps">
     <div class="wrap">
       <p class="eyebrow">Uygulama Kataloğu</p>
-      <h2 class="section-title">Bir hücre dolu, ikisi boş — tıpkı çözülmemiş bir sudoku gibi.</h2>
+      <h2 class="section-title">İki hücre dolu, biri boş — tıpkı çözülmemiş bir sudoku gibi.</h2>
 
       <div class="board-row">
         <article class="tile tile-filled">
@@ -477,10 +479,16 @@
           <a class="btn btn-primary btn-block" href="https://play.google.com/store/apps/details?id=com.yacsoft.sudokuapp">Google Play'de İndir</a>
         </article>
 
-        <article class="tile tile-empty">
-          <div class="tile-ghost">?</div>
-          <h3>Yakında</h3>
-          <p>Yeni bir bulmaca üzerinde çalışıyoruz.</p>
+        <article class="tile tile-filled">
+          <div class="tile-icon tile-icon-img"><img src="/cardduel/assets/icon.png" alt="Card Duel simgesi" width="44" height="44"></div>
+          <h3>Card Duel</h3>
+          <p>Deste kur, canavarları çağır ve oyunculara karşı online kart düellosuna gir. 8 bölümlük hikâye, 90'dan fazla çizilmiş kart ve 30 kademeli sezon bileti.</p>
+          <ul class="tags">
+            <li>Online düello</li>
+            <li>99 kart</li>
+            <li>11 dil</li>
+          </ul>
+          <a class="btn btn-primary btn-block" href="/cardduel/">Oyunu Keşfet</a>
         </article>
 
         <article class="tile tile-empty">
