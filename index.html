@@ -231,6 +231,50 @@
 
   .btn-block { width: 100%; justify-content: center; margin-top: 1.4rem; }
 
+  .hero-slides {
+    position: relative;
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .hero-slides::-webkit-scrollbar { display: none; }
+  .hero-slide { flex: 0 0 100%; scroll-snap-align: start; padding-bottom: 34px; }
+
+  .hero-dots {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: 9px;
+    margin-top: 6px;
+  }
+
+  .hero-dots button {
+    width: 9px;
+    height: 9px;
+    padding: 0;
+    border: 0;
+    border-radius: 999px;
+    background: var(--line-strong);
+    cursor: pointer;
+    transition: width 0.25s, background 0.25s;
+  }
+
+  .hero-dots button.on { width: 30px; background: var(--accent); }
+
+  .hero-shot {
+    width: min(480px, 100%);
+    border-radius: 22px;
+    border: 2px solid var(--line-strong);
+    box-shadow: 0 24px 48px -18px var(--shadow);
+    overflow: hidden;
+    background: #0b0d14;
+  }
+
+  .hero-shot img { display: block; width: 100%; height: auto; }
+
   .hero-mark {
     display: flex;
     justify-content: center;
@@ -459,6 +503,8 @@
 
 <main>
   <section class="hero" id="top">
+    <div class="hero-slides" id="heroSlides">
+      <div class="hero-slide">
     <div class="wrap hero-grid">
       <div class="hero-copy">
         <p class="eyebrow">YacSoft Stüdyosu</p>
@@ -494,6 +540,25 @@
         </div>
       </div>
     </div>
+      </div>
+      <div class="hero-slide">
+        <div class="wrap hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Yeni Oyun · Yakında</p>
+            <h2 class="hero-title">Kartlarını seç, düelloya gir.</h2>
+            <p class="hero-sub">Card Duel ile deste kur, canavarları çağır ve dünyanın dört bir yanından oyunculara karşı online kart düellosuna çık. 8 bölümlük hikâye, 99 çizilmiş kart, ligler ve 11 dil desteği.</p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="/cardduel/">Oyunu Keşfet</a>
+              <a class="btn btn-ghost" href="/cardduel/#cards">Kartlara Göz At</a>
+            </div>
+          </div>
+          <div class="hero-mark">
+            <div class="hero-shot"><img src="/cardduel/assets/shots/tr-2.jpg" alt="Card Duel düello ekranı" width="1280" height="720"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-dots" id="heroDots"></div>
   </section>
 
   <section class="apps" id="apps">
@@ -591,6 +656,27 @@
   next.onclick = function () { go(cur + 1); };
   tr.addEventListener('scroll', function () { clearTimeout(tr._t); tr._t = setTimeout(mark, 60); });
   mark();
+})();
+</script>
+<script>
+(function () {
+  var tr = document.getElementById('heroSlides'), dots = document.getElementById('heroDots');
+  if (!tr) return;
+  var sl = tr.children, cur = 0, timer;
+  for (var i = 0; i < sl.length; i++) {
+    var d = document.createElement('button');
+    d.type = 'button';
+    d.setAttribute('aria-label', String(i + 1));
+    (function (n) { d.onclick = function () { go(n); play(); }; })(i);
+    dots.appendChild(d);
+  }
+  function go(n) { cur = (n + sl.length) % sl.length; tr.scrollTo({ left: cur * tr.clientWidth, behavior: 'smooth' }); mark(); }
+  function mark() { for (var j = 0; j < dots.children.length; j++) dots.children[j].className = j === cur ? 'on' : ''; }
+  function play() { clearInterval(timer); if (matchMedia('(prefers-reduced-motion: reduce)').matches) return; timer = setInterval(function () { go(cur + 1); }, 7000); }
+  tr.addEventListener('scroll', function () { clearTimeout(tr._t); tr._t = setTimeout(function () { cur = Math.round(tr.scrollLeft / tr.clientWidth); mark(); }, 60); });
+  tr.addEventListener('pointerdown', function () { clearInterval(timer); });
+  tr.addEventListener('pointerup', play);
+  mark(); play();
 })();
 </script>
 </body>
