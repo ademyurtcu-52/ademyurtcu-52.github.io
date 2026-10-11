@@ -315,159 +315,6 @@
     .mark-chip { width: min(220px, 60vw); margin: 0 auto; }
   }
 
-  /* ---------- Apps / catalog ---------- */
-
-  .apps { padding: clamp(48px, 8vw, 84px) 0 clamp(64px, 9vw, 100px); }
-
-  .section-title {
-    font-size: clamp(1.4rem, 2.6vw, 1.9rem);
-    font-weight: 600;
-    max-width: 34ch;
-    margin-top: 0.4rem;
-  }
-
-  .app-slider { position: relative; margin-top: 2.8rem; }
-
-  .app-track {
-    display: flex;
-    gap: 20px;
-    overflow-x: auto;
-    padding: 6px 2px 22px;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .app-track::-webkit-scrollbar { display: none; }
-
-  .tile {
-    flex: 0 0 min(88%, 340px);
-    scroll-snap-align: start;
-    background: var(--paper-raised);
-    padding: 28px 26px;
-    display: flex;
-    flex-direction: column;
-    border: 2px solid var(--line-strong);
-    border-radius: 18px;
-    box-shadow: 0 10px 28px var(--shadow);
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-
-  .tile-filled:hover { transform: translateY(-4px); box-shadow: 0 16px 36px var(--shadow); }
-  .tile .btn-block { margin-top: auto; }
-  .tile .tags { margin-bottom: 1.4rem; }
-
-  .app-nav {
-    position: absolute;
-    top: calc(50% - 40px);
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    border: 1px solid var(--line-strong);
-    background: var(--paper-raised);
-    color: var(--ink);
-    font-size: 1.5rem;
-    line-height: 1;
-    cursor: pointer;
-    box-shadow: 0 6px 18px var(--shadow);
-    z-index: 2;
-  }
-
-  .app-nav:hover { background: var(--accent); color: var(--paper-raised); }
-  .app-nav[disabled] { opacity: 0.35; cursor: default; }
-  .app-prev { left: -12px; }
-  .app-next { right: -12px; }
-
-  .app-dots { display: flex; justify-content: center; gap: 8px; margin-top: 4px; }
-
-  .app-dots button {
-    width: 9px;
-    height: 9px;
-    padding: 0;
-    border: 0;
-    border-radius: 999px;
-    background: var(--line-strong);
-    cursor: pointer;
-    transition: width 0.25s, background 0.25s;
-  }
-
-  .app-dots button.on { width: 28px; background: var(--accent); }
-
-  @media (max-width: 720px) {
-    .app-nav { display: none; }
-  }
-
-  .tile-icon {
-    width: 44px;
-    height: 44px;
-    background: var(--brand-chip);
-    border-radius: 10px;
-    padding: 7px;
-    margin-bottom: 1.1rem;
-  }
-
-  .tile-icon svg { width: 100%; height: 100%; display: block; }
-  .tile-icon-img { padding: 0; overflow: hidden; background: none; }
-  .tile-icon-img img { width: 100%; height: 100%; display: block; object-fit: cover; border-radius: 10px; }
-
-  .tile h3 {
-    font-size: 1.15rem;
-    font-weight: 700;
-  }
-
-  .tile-filled p {
-    color: var(--ink-soft);
-    font-size: 0.94rem;
-    margin: 0.7rem 0 0;
-  }
-
-  .tags {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    padding: 0;
-    margin: 1.2rem 0 0;
-  }
-
-  .tags li {
-    font-family: var(--font-display);
-    font-size: 0.72rem;
-    letter-spacing: 0.02em;
-    color: var(--accent);
-    border: 1px solid var(--line-strong);
-    border-radius: 999px;
-    padding: 5px 11px;
-  }
-
-  .tile-empty {
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background:
-      repeating-linear-gradient(135deg, var(--line) 0 2px, transparent 2px 14px);
-    color: var(--ink-soft);
-  }
-
-  .tile-ghost {
-    font-family: var(--font-display);
-    font-size: 2.2rem;
-    font-weight: 700;
-    color: var(--ink-soft);
-    opacity: 0.4;
-    width: 52px;
-    height: 52px;
-    border: 1px dashed var(--line-strong);
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1rem;
-  }
-
-  .tile-empty h3 { color: var(--ink-soft); font-weight: 600; font-size: 1rem; }
-  .tile-empty p { font-size: 0.88rem; margin: 0.5rem 0 0; max-width: 22ch; }
-
   /* ---------- Footer ---------- */
 
   .site-footer {
@@ -495,7 +342,6 @@
   <div class="wrap header-row">
     <a class="wordmark" href="#top">YacSoft</a>
     <nav class="site-nav">
-      <a href="#apps">Uygulamalar</a>
       <a href="#contact">İletişim</a>
     </nav>
   </div>
@@ -512,7 +358,6 @@
         <p class="hero-sub">Klasik oyun mekaniklerini gerçek zamanlı etkinliklere ve kazanılabilir ödüllere bağlıyoruz. Sudoku Ödül Festivali şimdi Google Play'de, kart düellosu Card Duel yakında geliyor.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.yacsoft.sudokuapp">Google Play'de Aç</a>
-          <a class="btn btn-ghost" href="#apps">Uygulamaları Gör</a>
         </div>
       </div>
       <div class="hero-mark">
@@ -561,59 +406,6 @@
     <div class="hero-dots" id="heroDots"></div>
   </section>
 
-  <section class="apps" id="apps">
-    <div class="wrap">
-      <p class="eyebrow">Uygulama Kataloğu</p>
-      <h2 class="section-title">İki hücre dolu, biri boş — tıpkı çözülmemiş bir sudoku gibi.</h2>
-
-      <div class="app-slider" id="appSlider">
-        <div class="app-track">
-        <article class="tile tile-filled">
-          <div class="tile-icon">
-            <svg viewBox="0 0 456 456" role="img" aria-label="Sudoku Ödül Festivali simgesi">
-              <g stroke="#FFFFFF" stroke-width="20" stroke-linecap="round" fill="none">
-                <rect x="108" y="112" width="240" height="240" rx="18" />
-                <line x1="188" y1="112" x2="188" y2="352" />
-                <line x1="268" y1="112" x2="268" y2="352" />
-                <line x1="108" y1="192" x2="348" y2="192" />
-                <line x1="108" y1="272" x2="348" y2="272" />
-              </g>
-            </svg>
-          </div>
-          <h3>Sudoku Ödül Festivali</h3>
-          <p>Klasik 9x9 sudoku, dört zorluk seviyesi ve etkinlik süresince biriken puanlarla birinciye, ikinciye ve üçüncüye gerçek ödüller.</p>
-          <ul class="tags">
-            <li>4 zorluk seviyesi</li>
-            <li>Etkinlik sıralaması</li>
-            <li>Bulut senkronizasyonu</li>
-          </ul>
-          <a class="btn btn-primary btn-block" href="https://play.google.com/store/apps/details?id=com.yacsoft.sudokuapp">Google Play'de İndir</a>
-        </article>
-
-        <article class="tile tile-filled">
-          <div class="tile-icon tile-icon-img"><img src="/cardduel/assets/icon.png" alt="Card Duel simgesi" width="44" height="44"></div>
-          <h3>Card Duel</h3>
-          <p>Deste kur, canavarları çağır ve oyunculara karşı online kart düellosuna gir. 8 bölümlük hikâye, 90'dan fazla çizilmiş kart ve 30 kademeli sezon bileti.</p>
-          <ul class="tags">
-            <li>Online düello</li>
-            <li>99 kart</li>
-            <li>11 dil</li>
-          </ul>
-          <a class="btn btn-primary btn-block" href="/cardduel/">Oyunu Keşfet</a>
-        </article>
-
-        <article class="tile tile-empty">
-          <div class="tile-ghost">?</div>
-          <h3>Yakında</h3>
-          <p>Katalog büyümeye devam edecek.</p>
-        </article>
-      </div>
-        <button class="app-nav app-prev" type="button" aria-label="Önceki">&#8249;</button>
-        <button class="app-nav app-next" type="button" aria-label="Sonraki">&#8250;</button>
-        <div class="app-dots"></div>
-      </div>
-    </div>
-  </section>
 </main>
 
 <footer class="site-footer" id="contact">
@@ -623,41 +415,6 @@
   </div>
 </footer>
 
-<script>
-(function () {
-  var sl = document.getElementById('appSlider');
-  if (!sl) return;
-  var tr = sl.querySelector('.app-track'), tiles = tr.children, dots = sl.querySelector('.app-dots');
-  var prev = sl.querySelector('.app-prev'), next = sl.querySelector('.app-next'), cur = 0;
-  for (var i = 0; i < tiles.length; i++) {
-    var d = document.createElement('button');
-    d.type = 'button';
-    d.setAttribute('aria-label', String(i + 1));
-    (function (n) { d.onclick = function () { go(n); }; })(i);
-    dots.appendChild(d);
-  }
-  function go(n) {
-    n = Math.max(0, Math.min(tiles.length - 1, n));
-    tr.scrollTo({ left: tiles[n].offsetLeft - tiles[0].offsetLeft, behavior: 'smooth' });
-  }
-  function mark() {
-    var best = 0, dist = 1e9;
-    for (var i = 0; i < tiles.length; i++) {
-      var m = Math.abs(tiles[i].offsetLeft - tiles[0].offsetLeft - tr.scrollLeft);
-      if (m < dist) { dist = m; best = i; }
-    }
-    if (tr.scrollLeft + tr.clientWidth >= tr.scrollWidth - 4) best = tiles.length - 1;
-    cur = best;
-    for (var j = 0; j < dots.children.length; j++) dots.children[j].className = j === cur ? 'on' : '';
-    prev.disabled = cur === 0;
-    next.disabled = cur === tiles.length - 1;
-  }
-  prev.onclick = function () { go(cur - 1); };
-  next.onclick = function () { go(cur + 1); };
-  tr.addEventListener('scroll', function () { clearTimeout(tr._t); tr._t = setTimeout(mark, 60); });
-  mark();
-})();
-</script>
 <script>
 (function () {
   var tr = document.getElementById('heroSlides'), dots = document.getElementById('heroDots');
